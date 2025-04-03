@@ -47,7 +47,8 @@ CIDASシステムへの登録を進めてください。実習は、基本的に
 
 ### IDL
 
-- [(NV5 Geospatial Software 公式) Getting Started with IDL](https://www.nv5geospatialsoftware.com/docs/Getting_Started.html)
+- [L3 Harris IDL入門](https://nv5geospatialsoftware.co.jp/Portals/74/VIS_JAPAN/documents/IDL88_training.pdf)
+- [Getting Started with IDL](https://www.nv5geospatialsoftware.com/docs/Getting_Started.html)
 
 ### 太陽地球圏特有のライブラリ・ツール
 
