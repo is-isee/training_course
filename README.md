@@ -19,15 +19,23 @@ CIDASシステムへの登録を進めてください。実習は、基本的に
 
 ## 扱う内容
 
-- UNIX/Linuxの基本操作
+- UNIX/Linux 操作
   - (SSH、公開鍵、設定方法)
+  - CIDASシステムの紹介
+  - ファイルシステムの考え方
   - ファイル・ディレクトリの操作
   - ファイル・ディレクトリの権限
   - ファイル情報の取得
   - システム情報の取得
-- データ可視化の基礎
-- データ処理の基礎
-- 数値計算の基礎
+- ネットワーク
+  - ネットワークの階層構造
+  - IP/TCP
+- VSCode
+- シェルスクリプト
+- Makefile
+- データ可視化
+- データ解析
+- 数値シミュレーション
 
 ## 参考文献
 
@@ -35,6 +43,10 @@ CIDASシステムへの登録を進めてください。実習は、基本的に
 
 - [明治大学生田メディア支援事務室 UNIXの手引き](https://www.meiji.ac.jp/isys/doc/UNIX2019.pdf) (PDF)
 - [「新しいLinuxの教科書」三宅 英明、大角 祐介](https://www.sbcr.jp/product/4797380941/) (書籍)
+
+### VSCode
+
+- [Getting Started with Visual Studio Code](https://code.visualstudio.com/docs/introvideos/basics)
 
 ### Python
 
