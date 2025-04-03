@@ -24,3 +24,8 @@ vi mkdocs.yml
 # GitHub Pagesへのデプロイ設定
 vi .github/workflows/static.yml
 ```
+
+## 画像の挿入
+
+- リポジトリにラスター画像を重くなるため、必要性やサイズを慎重に選択する。
+- 単純な模式図であれば `PlantUML`、 `Mermaid` や `draw.io` などの利用を検討する。
