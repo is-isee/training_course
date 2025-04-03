@@ -8,7 +8,7 @@
 
 CIDASシステムへの登録を進めてください。実習は、基本的にCIDASシステム上で行います。  
 
-- CIDASシステム登録ページ： <https://cidas-local.isee.nagoya-u.ac.jp/acc/regist.html>
+- CIDASシステム登録ページ： <https://cidas.isee.nagoya-u.ac.jp/kyodo/regist.shtml.ja>
 - CIDASシステム利用マニュアル：
   - ja: <https://chs.isee.nagoya-u.ac.jp/scwiki/doku.php?id=public:ja:manual:cidas:start>
   - en: <https://chs.isee.nagoya-u.ac.jp/scwiki/doku.php?id=public:en:manual:cidas:start>
