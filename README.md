@@ -28,13 +28,13 @@ CIDASシステムへの登録を進めてください。実習は、基本的に
 
 ### UNIX/Linux
 
-- [明治大学生田メディア支援事務室 UNIXの手引き](https://www.meiji.ac.jp/isys/doc/UNIX2019.pdf) (オンライン資料)
-- [新しいLinuxの教科書](https://www.sbcr.jp/product/4797380941/) (書籍)
+- [明治大学生田メディア支援事務室 UNIXの手引き](https://www.meiji.ac.jp/isys/doc/UNIX2019.pdf) (PDF)
+- [「新しいLinuxの教科書」三宅 英明、大角 祐介](https://www.sbcr.jp/product/4797380941/) (書籍)
 
 ### Python
 
 - [Python公式チュートリアル](https://docs.python.org/ja/3/tutorial/)
-- [NumPyの学び方](https://numpy.org/ja/learn/)
+- [NumPyの学び方](https://numpy.org/ja/learn/) (動画資料あり)
 - [NumPyユーザーガイド](https://numpy.org/doc/stable/user/index.html)
 - [Matplotlibチュートリアル](https://matplotlib.org/stable/tutorials/index.html)
 - [nkmk note](https://note.nkmk.me/) (Python以外もあり)
@@ -42,7 +42,7 @@ CIDASシステムへの登録を進めてください。実習は、基本的に
 
 ### IDL
 
-- [NV5 Geospatial Software 公式資料](https://www.nv5geospatialsoftware.com/docs/Getting_Started.html)
+- [(NV5 Geospatial Software 公式) Getting Started with IDL](https://www.nv5geospatialsoftware.com/docs/Getting_Started.html)
 
 ### Fortran
 
@@ -55,4 +55,4 @@ CIDASシステムへの登録を進めてください。実習は、基本的に
 ### 数値計算
 
 - [東大「地球物理数値解析」講義資料](https://github.com/amanotk/numerical-geophysics)
-- [「数値計算の常識」伊理 正夫・藤野 和建](https://www.kyoritsu-pub.co.jp/bookdetail/9784320013438)
+- [「数値計算の常識」伊理 正夫・藤野 和建](https://www.kyoritsu-pub.co.jp/bookdetail/9784320013438) (書籍)
