@@ -1,6 +1,6 @@
 # ISEE総合解析研究部トレーニングコース
 
-ウェブページ: <https://iijimahr.github.io/is_training_course/>
+ウェブページ: <https://is-isee.github.io/training_course/>
 
 ## トレーニングコースの目的
 
