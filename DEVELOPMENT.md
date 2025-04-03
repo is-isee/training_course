@@ -21,6 +21,6 @@ mkdocs build
 # 目次・テーマ等の設定
 vi mkdocs.yml
 
-# デプロイの設定
+# GitHub Pagesへのデプロイ設定
 vi .github/workflows/static.yml
 ```
