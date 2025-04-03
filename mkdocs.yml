@@ -1,5 +1,9 @@
 site_name: ISEE/IS Training Course
 nav:
   - Home: index.md
-  - About: about.md
+  - Linux入門: linux_usage.md
+  - データ解析入門: data_analysis.md
+  - 数値計算入門: numerical_simulation.md
+  - 便利なツール: useful_tools.md
+  - 参考文献: references.md
 theme: readthedocs
