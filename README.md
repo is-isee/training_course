@@ -1,8 +1,15 @@
 # ISEE総合解析研究部トレーニングコース
 
-名古屋大学宇宙地球環境研究所総合解析研究部に在籍する学生に向けたトレーニングコースの資料
-
 ## 目的
+
+名古屋大学宇宙地球環境研究所総合解析研究部に在籍する学生が、新たに研究をスタートするにあたって必要な基礎知識を身につけるための演習。
+
+## 扱う内容
+
+- UNIX/Linuxの基本操作
+- データ可視化の基礎
+- データ処理の基礎
+- 数値計算の基礎
 
 ## 事前準備のお願い
 
@@ -11,12 +18,13 @@
 CIDASシステムへの登録を進めてください。実習は、基本的にCIDASシステム上で行います。  
 
 - CIDASシステム登録ページ： <https://cidas-local.isee.nagoya-u.ac.jp/acc/regist.html>
-- CIDASシステム利用マニュアル： <https://cidas-local.isee.nagoya-u.ac.jp/dw/doku.php?id=public:ja:manual:start>
+- CIDASシステム利用マニュアル：
+  - ja: <https://chs.isee.nagoya-u.ac.jp/scwiki/doku.php?id=public:ja:manual:cidas:start>
+  - en: <https://chs.isee.nagoya-u.ac.jp/scwiki/doku.php?id=public:en:manual:cidas:start>
 
-申請に際して、SSH公開鍵を自分のPCで作成して、申請ページに入力する必要がありますが、毎年、失敗するケースがでています。  
-申請手順に関しては、研究部の内部向けページの「新入生スタートアップ情報」の1.6章をよく読んでください。  
+申請に際して、SSH公開鍵を自分のPCで作成して、申請ページに入力する必要があります。  
+[利用マニュアル](https://chs.isee.nagoya-u.ac.jp/scwiki/doku.php?id=public:ja:manual:cidas:start)の「1. 利用申請」を良く読んで実施してください。  
 不明点がありましたら、先輩、PD、教員に聞いてください。
-
 
 ## 参考文献
 
