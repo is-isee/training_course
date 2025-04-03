@@ -98,7 +98,7 @@ CIDASシステムへの登録を進めてください。実習は、基本的に
 - [NumPyユーザーガイド](https://numpy.org/doc/stable/user/index.html)
 - [Matplotlibチュートリアル](https://matplotlib.org/stable/tutorials/index.html)
 - [nkmk note](https://note.nkmk.me/) (Python以外もあり)
-- [東大天野さんの演習資料(Python)](https://amanotk.github.io/python-resume-public/)
+- [東大天野さんの Python 演習資料](https://amanotk.github.io/python-resume-public/)
 
 ### IDL
 
@@ -115,7 +115,7 @@ CIDASシステムへの登録を進めてください。実習は、基本的に
 
 ### Fortran
 
-- [東大天野さんの演習資料(Fortran)](https://amanotk.github.io/fortran-resume-public/)
+- [東大天野さんの Fortran 演習資料](https://amanotk.github.io/fortran-resume-public/)
 
 ### C++
 
