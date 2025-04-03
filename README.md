@@ -7,6 +7,11 @@
 ## 扱う内容
 
 - UNIX/Linuxの基本操作
+  - (SSH、公開鍵、設定方法)
+  - ファイル・ディレクトリの操作
+  - ファイル・ディレクトリの権限
+  - ファイル情報の取得
+  - システム情報の取得
 - データ可視化の基礎
 - データ処理の基礎
 - 数値計算の基礎
@@ -43,6 +48,15 @@ CIDASシステムへの登録を進めてください。実習は、基本的に
 ### IDL
 
 - [(NV5 Geospatial Software 公式) Getting Started with IDL](https://www.nv5geospatialsoftware.com/docs/Getting_Started.html)
+- [SPEDAS/UDAS日本語](http://www.iugonet.org/product/analysis/udas-spedas/?lang=ja)
+
+### 太陽地球圏特有のライブラリ・ツール
+
+- [あらせサイエンスセンター「解析ツール、データの使い方」](https://ergsc.isee.nagoya-u.ac.jp/data_info/howto.shtml.ja) (pySPEDAS / SPEDAS / UDAS)
+- [SunPy](https://sunpy.org/)
+- [SSW](https://www.lmsal.com/solarsoft/)
+- [Chianti Atomic Database](http://chiantidatabase.org/)
+- [ChiantiPy](https://chiantipy.readthedocs.io/en/latest/)
 
 ### Fortran
 
