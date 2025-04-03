@@ -83,6 +83,7 @@ CIDASシステムへの登録を進めてください。実習は、基本的に
 
 ### UNIX/Linux
 
+- [「Linux 標準教科書」LinuC](https://linuc.org/textbooks/linux/) (PDF版無料)
 - [明治大学生田メディア支援事務室 UNIXの手引き](https://www.meiji.ac.jp/isys/doc/UNIX2019.pdf) (PDF)
 - [「新しいLinuxの教科書」三宅 英明、大角 祐介](https://www.sbcr.jp/product/4797380941/) (書籍)
 
