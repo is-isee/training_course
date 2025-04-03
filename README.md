@@ -54,9 +54,9 @@ CIDASシステムへの登録を進めてください。実習は、基本的に
 
 - [あらせサイエンスセンター「解析ツール、データの使い方」](https://ergsc.isee.nagoya-u.ac.jp/data_info/howto.shtml.ja) (pySPEDAS / SPEDAS / UDAS)
 - [SunPy](https://sunpy.org/)
-- [SSW](https://www.lmsal.com/solarsoft/)
-- [Chianti Atomic Database](http://chiantidatabase.org/)
+- [SolarSoftWare (SSWidl)](https://www.lmsal.com/solarsoft/)
 - [ChiantiPy](https://chiantipy.readthedocs.io/en/latest/)
+- [Chianti Atomic Database](http://chiantidatabase.org/)
 
 ### Fortran
 
