@@ -48,7 +48,6 @@ CIDASシステムへの登録を進めてください。実習は、基本的に
 ### IDL
 
 - [(NV5 Geospatial Software 公式) Getting Started with IDL](https://www.nv5geospatialsoftware.com/docs/Getting_Started.html)
-- [SPEDAS/UDAS日本語](http://www.iugonet.org/product/analysis/udas-spedas/?lang=ja)
 
 ### 太陽地球圏特有のライブラリ・ツール
 
