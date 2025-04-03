@@ -1,11 +1,13 @@
 site_name: ISEE/IS Training Course
 
 nav:
-  - Home: index.md
+  - はじめに: index.md
   - Linux入門: linux_usage.md
+  - Git/GitHub入門: git_github.md
+  - VSCode入門: vscode.md
+  - Python入門: python.md
   - データ解析入門: data_analysis.md
   - 数値計算入門: numerical_simulation.md
-  - 便利なツール: useful_tools.md
   - 参考文献: references.md
 
 theme: readthedocs
