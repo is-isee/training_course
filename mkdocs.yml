@@ -1,4 +1,5 @@
 site_name: ISEE/IS Training Course
+
 nav:
   - Home: index.md
   - Linux入門: linux_usage.md
@@ -6,4 +7,9 @@ nav:
   - 数値計算入門: numerical_simulation.md
   - 便利なツール: useful_tools.md
   - 参考文献: references.md
+
 theme: readthedocs
+
+markdown_extensions:
+  - mdx_truly_sane_lists:
+      nested_indent: 2
