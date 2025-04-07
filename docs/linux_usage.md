@@ -40,7 +40,7 @@ Linux（リナックス）は、1991年にリーナス・トーバルズが発�
   - Portable Operating System Interfaceの略
   - UNIX系OS間の互換性を保つためのAPI／コマンド仕様  
 - **本コースの位置づけ**  
-  - 「Linux入門」を冠しますが、POSIX互換の思想やUNIX系OS全体の基礎を押さえることで、他OSへの応用力も身につけます  
+  - 「Linux入門」という名称ですが、UNIX系OS全体の基礎を押さえることにもつながります。
 
 ## シェルの操作
 
@@ -94,9 +94,11 @@ $ cd Doc<Tab>   # Documents/ などに補完
 $ MYVAR=hello
 $ echo $MYVAR
 hello
-
-$ export MYVAR
-$ bash -c 'echo $MYVAR'   # 子シェルでも参照可能
+$ bash -c 'echo $MYVAR'   # シェル変数は子プロセスで参照不能
+                          # 何も出力されない
+$ export MYVAR            # シェル変数を環境変数に
+$ bash -c 'echo $MYVAR'   # 環境変数は子プロセスでも参照可能
+hello
 ```
 
 ### 環境変数 PATH とコマンドの呼び出し
@@ -570,23 +572,22 @@ $ jobs
 
 ### リモートでプロセスの実行を続けるには `nohup`、`screen`、`tmux`
 
-リモート接続（SSHなど）を切ってもプロセスを生かしたい場合は、次のいずれかの方法を使う:
-
-- `nohup`: ログアウト後もプロセスを継続
+リモート接続（SSHなど）を切ってもプロセスを生かしたい場合は、次のいずれかの方法を使う。
+`nohup`を使うとログアウト後もプロセスを継続できる。
 
 ```bash
 client$ ssh <server_name>
 $ bash -c "sleep 30 && echo Finished at `date` > tmp.txt" &
-$ exit    # ログアウトするとスクリプトの実行プロセスは終了してしまう
+$ exit    # ログアウトするとスクリプトの実行プロセスは途中で停止
 
 client$ ssh <server_name>
 $ nohup bash -c "sleep 30 && echo Finished at `date` > tmp.txt" &
-$ exit    # 30秒以内にログアウトしてもプロセスは終了しない
+$ exit    # 30秒以内にログアウトしてもプロセスは継続
 client$ ssh <server_name>
-$ cat nohup.txt
+$ cat tmp.txt
 ```
 
-- `screen` / `tmux`: 仮想ターミナル（ターミナルマルチプレクサ）を使ってセッションを維持できる。分割画面やセッションの再接続も可能。
+`screen`や`tmux`は仮想ターミナル（ターミナルマルチプレクサ）と呼ばれ、リモート接続切断後もプロセス維持できる。分割画面や切断したセッションへの再接続も可能。
 
 ```bash
 $ tmux           # 新しいセッションを開始
@@ -628,8 +629,6 @@ $ jobs
 ```bash
 $ kill <PID>
 ```
-
-(4) `kill -9` を使うと強制終了となるが、なるべく通常の `kill` を使う習慣を持つこと。
 
 ## システム情報
 
@@ -720,19 +719,19 @@ $ ls -l
 
 ### CIDASシステムにおけるホームディレクトリの容量制限
 
-CIDASでは以下の容量制限（quota）が存在:
+CIDASでは以下の容量制限（quota）が存在する。
 
-- `scplatform`: 10 MB 以下
-- Lustre（`scfront` や IDL・計算ノード）: 500 GB 以下
-  - ホームディレクトリとは別に `/scr/` にスクラッチ領域あり（容量制限なし、定期的に消去）
+- `scplatform`のホームディレクトリ: 10 MB 以下
+- `scfront` や IDL・計算ノードのホームディレクトリ: 500 GB 以下
+- スクラッチ領域 `/scr/`: 容量制限なし (定期的に消去されるので一時ファイル用)
 
-現在の使用状況を確認するには、`scfront` 上で以下を実行:
+現在の使用状況は、`scfront` 上で
 
 ```bash
 $ uquota.sh -h
 ```
 
-詳細は[CIDASシステム利用マニュアル](https://chs.isee.nagoya-u.ac.jp/scwiki/doku.php?id=public:ja:manual:cidas:login)を参照
+を実行すると確認できる。詳細は[CIDASシステム利用マニュアル](https://chs.isee.nagoya-u.ac.jp/scwiki/doku.php?id=public:ja:manual:cidas:login)を参照。
 
 ### 共有サーバ利用の心得
 
@@ -744,18 +743,23 @@ $ uquota.sh -h
 
 ## ネットワーク
 
-### ネットワークの階層構造
+### TCP/IP
 
-ネットワークは複数の階層（レイヤ）で構成されており、それぞれが異なる役割を担っている。基本的な要素には以下がある:
+ネットワークは複数の階層（レイヤ）で構成されており、それぞれが異なる役割を担っている。代表的なネットワークのモデルにはOSI参照モデルが挙げられる。
+本コースでは
 
 - **IP（Internet Protocol）**: 機器を一意に識別するアドレス（例: 192.0.2.1）
 - **TCP（Transmission Control Protocol）**: データを順序通りに確実に届ける仕組み
-- **ドメインネームとIPアドレス**:
-  - ドメイン名（例: <www.example.com）をIPアドレスに変換するには> DNS（名前解決）が用いられる
+- **ドメイン名**: IPアドレスに対応付けられた名称 (例: `www.example.com` など)
 
 ### ISEE内部のネットワーク
 
-ISEE内には学内限定のネットワークや、外部に公開されていないリソースが存在する。詳細な構成は非公開資料を参照すること。
+ISEE内部のネットワークに関する情報は、内部向け資料を参照すること。
+本トレーニングコースでは詳細は議論しない。
+
+### `ping`
+
+### `dig`
 
 ### ネットワークごしのデータコピー `scp`、`rsync`
 
