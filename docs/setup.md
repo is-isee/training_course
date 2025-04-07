@@ -107,20 +107,18 @@ fi
 各自のPC上のホームディレクトリに `client:$HOME/.ssh/config` というファイルを作成し、以下の内容を書き込んでください。`scfront`のIPアドレス・ポート番号は周囲に聞くか実習時に質問してください。
 
 ```config
-Host *
- AddKeysToAgent yes
- IdentityFile <Registered private key>
-
 Host scplatform
  Hostname scplatform.isee.nagoya-u.ac.jp
  User <Username>
  ForwardAgent yes
+ IdentityFile <Registered private key>
 
 Host scfront
  HostName <IP of scfront2021 (NAPT)>
  Port <Port of scfront2021 in NAPT>
  User <Username>
  ProxyJump scplatform
+ IdentityFile <Registered private key>
 ```
 
 うまく設定されていれば、`scplatform`を経由することなく直接 `scfront` へログインできる。

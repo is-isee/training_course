@@ -1,6 +1,7 @@
-site_name: ISEE/IS Training Course
+site_name: 総合解析トレーニングコース
 
 nav:
+  - ホーム: index.md
   - 事前準備: setup.md
   - Linux入門: linux_usage.md
   - Git/GitHub入門: git_github.md
@@ -10,16 +11,11 @@ nav:
   - 数値計算入門: numerical_simulation.md
   - 参考文献: references.md
 
-theme: material
+theme: readthedocs
 
 markdown_extensions:
   - mdx_truly_sane_lists:
       nested_indent: 2
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.arithmatex:
       generic: true
 
