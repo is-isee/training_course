@@ -7,6 +7,12 @@
 - [明治大学生田メディア支援事務室 UNIXの手引き](https://www.meiji.ac.jp/isys/doc/UNIX2019.pdf) (PDF)
 - [「新しいLinuxの教科書」三宅 英明、大角 祐介](https://www.sbcr.jp/product/4797380941/) (書籍)
 
+## Git/GitHub
+
+- [サル先生のGit入門](https://backlog.com/ja/git-tutorial/)
+- [渡辺宙志「GitHub演習」](https://kaityo256.github.io/github/) (書籍版あり)
+- GitHub「Gitチートシート」[HTML版](https://training.github.com/downloads/ja/github-git-cheat-sheet/) ([PDF版](https://training.github.com/downloads/ja/github-git-cheat-sheet.pdf))
+
 ## VSCode
 
 - [Getting Started with Visual Studio Code](https://code.visualstudio.com/docs/introvideos/basics)
@@ -18,7 +24,7 @@
 - [NumPyユーザーガイド](https://numpy.org/doc/stable/user/index.html)
 - [Matplotlibチュートリアル](https://matplotlib.org/stable/tutorials/index.html)
 - [nkmk note](https://note.nkmk.me/) (Python以外もあり)
-- [東大天野さんの Python 演習資料](https://amanotk.github.io/python-resume-public/)
+- [天野孝伸「Python 演習」](https://amanotk.github.io/python-resume-public/)
 
 ## IDL
 
@@ -35,7 +41,7 @@
 
 ## Fortran
 
-- [東大天野さんの Fortran 演習資料](https://amanotk.github.io/fortran-resume-public/)
+- [天野孝伸「Fortran 演習」](https://amanotk.github.io/fortran-resume-public/)
 
 ## C++
 
@@ -44,4 +50,4 @@
 ## 数値計算
 
 - [東大「地球物理数値解析」講義資料](https://amanotk.github.io/numerical-geophysics/)
-- [「数値計算の常識」伊理 正夫・藤野 和建](https://www.kyoritsu-pub.co.jp/bookdetail/9784320013438) (書籍)
+- [「数値計算の常識」伊理正夫・藤野和建](https://www.kyoritsu-pub.co.jp/bookdetail/9784320013438) (書籍)
