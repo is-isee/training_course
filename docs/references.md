@@ -49,5 +49,8 @@
 
 ## 数値計算
 
+- [宇宙磁気流体・プラズマシミュレーションサマーセミナー講義資料](http://www.icehap.chiba-u.jp/activity/SS2019/textbook.html)
 - [東大「地球物理数値解析」講義資料](https://amanotk.github.io/numerical-geophysics/)
 - [「数値計算の常識」伊理正夫・藤野和建](https://www.kyoritsu-pub.co.jp/bookdetail/9784320013438) (書籍)
+- [「プラズマの計算科学」金田・笹井監修、梅田編](https://www.kyoritsu-pub.co.jp/book/b10092510.html) (書籍)
+- [「輻射電磁流体シミュレーションの基礎」松本・大須賀・須佐](https://www.nippyo.co.jp/shop/book/9196.html)
