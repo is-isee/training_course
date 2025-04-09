@@ -51,7 +51,7 @@ LANケーブルの接続ミスやネットワーク機器の配線ミスが原�
 
 IPv6は現在も普及が進むIPv4に続く次世代の通信規格で、IPアドレスは128ビットとなる。これにより、IoT (Internet of Things)のようにあらゆるモノ(Things)がインターネットに接続される状況であっても、各ホストを一意に区別することが可能になると期待されている。
 
-### 装置のネットワーク接続情報を調べる `ip` (`ifconfig`)
+## 装置のネットワーク接続情報を調べる `ip` (`ifconfig`)
 
 `ip`コマンドを使うと現在のネットワークへの接続設定や接続状況を確認することができる。OSによっては`ifconfig`が同等の機能を持つ。`ip`と`ifconfig`は異なるネットワークツール群(それぞれ`iproute2`、`net-tools`)に属すコマンドで、より新しい`iproute2`への移行が徐々に進んでいる。
 
@@ -72,6 +72,20 @@ default via 1.2.3.1 dev eth0 proto static
 1.2.3.0/24 dev eth0 proto kernel scope link src 1.2.3.4
 ```
 
+## ホストからの応答を調べる `ping`
+
+`ping`コマンドを使うと特定のIPアドレスを持つ機器から応答があるかを調べることができる。
+ネットワークの接続試験などに利用できる。
+
+```bash
+$ ping 8.8.8.8   # Google Public DNS
+ping 8.8.8.8
+PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=116 time=4.09 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=116 time=3.90 ms
+# 終了はCtrl-C
+```
+
 ## TCP/IP (TCP over IP)
 
 IP通信と**TCP（Transmission Control Protocol）**を組み合わせたTCP/IPはデータを順序通りに確実に届ける非常に一般的なプロトコルである。インターネット・プロトコル・スイートとも呼ばれる。我々がよく利用するSSH、HTTP、SMTPなどのプロトコルも、このTCP/IPの上に構築されている(SSH over TCP over IPなど)。
@@ -87,20 +101,6 @@ TCP/IP通信ではIPアドレスに加えて、通信に使用するプログラ
 ### IPマスカレード(NAPT)
 
 IPマスカレード(NAPT; Network Address Port Translation)とは、1つのIPアドレスを複数の装置で共有する機能の一つである。IPアドレスとポート番号を組み合わせることで、同じIPアドレスに対する通信でも異なる装置にアクセスすることができる。IPアドレス枯渇問題ではローカルネットワークとグローバルネットワークのアドレスを分離する話が出てきたが、これもNAPTを使って実現することができる。
-
-## ホストからの応答を調べる `ping`
-
-`ping`コマンドを使うと特定のIPアドレスを持つ機器から応答があるかを調べることができる。
-ネットワークの接続試験などに利用できる。
-
-```bash
-$ ping 8.8.8.8   # Google Public DNS
-ping 8.8.8.8
-PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
-64 bytes from 8.8.8.8: icmp_seq=1 ttl=116 time=4.09 ms
-64 bytes from 8.8.8.8: icmp_seq=2 ttl=116 time=3.90 ms
-# 終了はCtrl-C
-```
 
 ## ドメイン名とIPアドレスの対応関係 `dig`
 
