@@ -1,5 +1,7 @@
 # ISEE総合解析研究部トレーニングコース
 
+![Deploy Status](https://github.com/is-isee/training_course/actions/workflows/deploy.yml/badge.svg)
+
 ウェブページ: <https://is-isee.github.io/training_course/>
 
 ## このトレーニングコースの位置づけ
