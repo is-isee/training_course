@@ -121,7 +121,7 @@ Host scfront
  IdentityFile <Registered private key>
 ```
 
-うまく設定されていれば、`scplatform`を経由することなく直接 `scfront` へログインできる。
+うまく設定されていれば、`scplatform`を経由することなく直接 `scfront` へログインできます。
 
 ```shell
 client$ ssh scfront

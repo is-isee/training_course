@@ -12,13 +12,26 @@ nav:
   - 数値計算入門: numerical_simulation.md
   - 参考文献: references.md
 
-theme: readthedocs
+theme:
+  # name: 'readthedocs'
+  name: material
+  language: ja
+  features:
+    - header.autohide
+
+copyright: Copyright &copy; 2025 Division for Integrated Studies, Institute for Space-Earth Environmental Research, Nagoya UNIVERSITY.
+repo_url: https://github.com/is-isee/training_course
 
 markdown_extensions:
   - mdx_truly_sane_lists:
       nested_indent: 2
   - pymdownx.arithmatex:
       generic: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
 
 extra_javascript:
   - javascripts/katex.js
