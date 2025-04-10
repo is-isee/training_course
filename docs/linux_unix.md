@@ -1,4 +1,4 @@
-# Linuxの基礎知識
+# Linux/UNIX入門
 
 ## LinuxとUNIX系OS
 
@@ -19,7 +19,7 @@ UNIX（ユニックス）は、1969年にAT&Tベル研究所でKenneth Thompson�
 Linux（リナックス）は、1991年にLinus Torvaldsが発表した**カーネル**（OSの中核部分）です。
 
 - **オープンソース**  
-  - GPL（GNU General Public License）で公開され、誰でもソースコードを閲覧・改変・再配布可能  
+  - GPL（GNU General Public License）で公開
 - **カーネルとディストリビューション**  
   - **カーネル**: ハードウェア管理やプロセス管理を担う  
   - **ディストリビューション**: カーネルに各種ユーティリティやパッケージ管理システム、GUIなどを組み合わせた配布形態  
@@ -40,7 +40,7 @@ Linux（リナックス）は、1991年にLinus Torvaldsが発表した**カー�
   - Portable Operating System Interfaceの略
   - UNIX系OS間の互換性を保つためのAPI／コマンド仕様  
 - **本コースの位置づけ**  
-  - 「Linux入門」という名称ですが、UNIX系OS全体の基礎知識習得を目指します。
+  - UNIX系OSに共通する基礎知識の習得を目指します。
 
 ## シェルの操作
 
@@ -557,7 +557,7 @@ $ diff a.txt b.txt
 > fed
 ```
 
-### テキストの加工・集計
+### テキストの加工・集計 `awk`
 
 ```bash
 # data.txt の各行について、1列目と3列目を表示

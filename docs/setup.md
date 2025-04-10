@@ -5,6 +5,8 @@
 
 ## ターミナル環境・SSHクライアントの準備
 
+Linux/UNIX入門を始める前に、ターミナル環境およびSSHクライアントの準備が必要です。
+
 ### Windowsの場合
 
 WSL2 (Windows SUbsystem for Linux 2) を使うとWindows上でLinuxを利用できます。公式情報は <https://learn.microsoft.com/ja-jp/windows/wsl/install> にあります。
@@ -22,7 +24,11 @@ Ubuntu を実行し、ユーザーとパスワードの設定を行ってくだ�
 
 BSD UNIXがベースなのでもともとインストールされている `ターミナル.app` を使うことができます。
 
-## CIDASシステムについて
+## CIDASシステムへの利用申請・接続設定
+
+ネットワーク入門を始める前に、CIDASシステムへの利用申請およびSSH接続設定が必要です。
+
+### CIDASシステムについて
 
 ![CIDASシステム](https://cidas.isee.nagoya-u.ac.jp/kyodo/_img/cidas_system2021_long.png)
 
@@ -35,7 +41,7 @@ BSD UNIXがベースなのでもともとインストールされている `タ�
   - 計算ノード14機、IDLノード2機、共用ストレージ(Lustreファイルシステム)
   - すべてのノードからアクセス可能なディスク領域 `/cidashome/sc/cNNNNxxxx` が500GBまで利用可能
 
-## CIDASシステムへの登録
+### CIDASシステムへの利用申請
 
 事前にCIDASシステムへの登録を完了してください。実習の一部はCIDASシステム上で行います。
 
@@ -48,7 +54,7 @@ BSD UNIXがベースなのでもともとインストールされている `タ�
 CIDASシステム利用マニュアルの「1. 利用申請」および以下の説明を良く読んで実施してください。
 不明点がありましたら、周りの先輩や研究員、教員に聞いてください。
 
-## CIDASシステムへのSSH接続
+### CIDASシステムへのSSH接続
 
 以下は[CIDASシステム利用マニュアル](https://chs.isee.nagoya-u.ac.jp/scwiki/doku.php?id=public:ja:manual:cidas:start)を良く読みながら実施してください。
 
@@ -133,3 +139,7 @@ client$ ssh scfront
 
 - ECDSA公開鍵暗号化方式(鍵長 256 bits, 384 bits もしくは 521 bits)
 - Ed25519公開鍵暗号化方式
+
+## GitHubアカウントの取得
+
+Git/GitHub入門を開始する前に、[GitHub](https://github.com/)のアカウントを取得し、実習に利用するPCの公開鍵を登録しておきましょう。

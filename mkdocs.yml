@@ -3,7 +3,7 @@ site_name: 総合解析トレーニングコース
 nav:
   - ホーム: index.md
   - 事前準備: setup.md
-  - Linux入門: linux_usage.md
+  - Linux/UNIX入門: linux_unix.md
   - ネットワーク入門: network.md
   - Git/GitHub入門: git_github.md
   - VSCode入門: vscode.md
@@ -13,16 +13,21 @@ nav:
   - 参考文献: references.md
 
 theme:
-  # name: 'readthedocs'
+  # name: readthedocs
   name: material
   language: ja
   features:
     - header.autohide
+    # - toc.integrate
+  palette:
+    primary: blue grey
 
 copyright: Copyright &copy; 2025 Division for Integrated Studies, Institute for Space-Earth Environmental Research, Nagoya UNIVERSITY.
 repo_url: https://github.com/is-isee/training_course
 
 markdown_extensions:
+  - toc:
+      toc_depth: 3
   - mdx_truly_sane_lists:
       nested_indent: 2
   - pymdownx.arithmatex:
@@ -39,4 +44,5 @@ extra_javascript:
   - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
 
 extra_css:
+  - stylesheets/extra.css
   - https://unpkg.com/katex@0/dist/katex.min.css
