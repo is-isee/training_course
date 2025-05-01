@@ -7,6 +7,10 @@
 - [明治大学生田メディア支援事務室 UNIXの手引き](https://www.meiji.ac.jp/isys/doc/UNIX2019.pdf) (PDF)
 - [「新しいLinuxの教科書」三宅 英明、大角 祐介](https://www.sbcr.jp/product/4797380941/) (書籍)
 
+## 計算機ネットワーク
+
+- [「［改訂新版］3分間ネットワーク基礎講座」網野 衛二](https://gihyo.jp/book/2010/978-4-7741-4373-6)
+
 ## Git/GitHub
 
 - [サル先生のGit入門](https://backlog.com/ja/git-tutorial/)
