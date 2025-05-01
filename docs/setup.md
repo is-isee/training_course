@@ -97,17 +97,6 @@ If failed, please check your commands again.
 scplatform2021$ ssh <Username>@scfront2021
 ```
 
-### SSHエージェントを自動で起動・停止するログインスクリプト `client:$HOME/.bashrc` (Windows/WSL2の場合)
-
-macOSの場合は`ssh-agent`とKeychainの連携が組み込まれているため、以下の設定は不要です。
-
-```shell
-if [ -z "$(pgrep ssh-agent)" ]; then
-    eval "$(ssh-agent -s)"
-    trap 'kill $SSH_AGENT_PID' EXIT
-fi
-```
-
 ### ログインを簡単にするための設定 `client:$HOME/.ssh/config`
 
 各自のPC上のホームディレクトリに `client:$HOME/.ssh/config` というファイルを作成し、以下の内容を書き込んでください。`scfront`のIPアドレス・ポート番号は周囲に聞くか実習時に質問してください。
@@ -133,6 +122,20 @@ Host scfront
 client$ ssh scfront
 ```
 
+### SSHエージェントの起動・停止と Keychain について
+
+ターミナルを起動するたびにSSHエージェントに鍵を登録する必要があり面倒です。また、起動方法によっては`ssh-agent`プロセスはシェルが停止しても生き残る場合があり、放置しておくと大量の不要なプロセスが発生します。
+
+macOSの場合は、`ssh-agent`とKeychainの連携が組み込まれており、`client:$HOME/.ssh/config`に以下のような設定を書くと、`ssh`コマンドを実行した時に自動で`ssh-agent`にキーが追加され、それ以降は自動でキーを読み込んでくれるようになります。
+
+```config
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+```
+
+Windows11上でWSL2を利用する場合も[`keychain`をインストールすることで鍵を`ssh-agent`に自動で登録](https://portal.isee.nagoya-u.ac.jp/stel-it/doku.php?id=public:win11_wsl2_ssh:memo)することができます。
+
 ### 複数のPCからCIDASシステムへログインしたい場合
 
 もし複数のクライアントPCからログインしたい場合は、 `scplatform2021:$HOME/.ssh/authorized_keys` および `scfront2021:$HOME/.ssh/authorized_keys` に公開鍵を追加してください (既に登録されている鍵を消すとログインできなくなります)。その際も、登録する鍵はCIDASシステムが要求する暗号化方式に限ってください。執筆時点 (2025-04-04) では以下が許可されています。
@@ -142,4 +145,4 @@ client$ ssh scfront
 
 ## GitHubアカウントの取得
 
-Git/GitHub入門を開始する前に、[GitHub](https://github.com/)のアカウントを取得し、実習に利用するPCの公開鍵を登録しておきましょう。
+Git/GitHub入門を開始する前に、[GitHub](https://github.com/)のアカウントを取得し、実習に利用するPCの公開鍵を登録しておきましょう。なお、GitHubアカウントは利用規約により1人1アカウントと定められているので注意してください。
