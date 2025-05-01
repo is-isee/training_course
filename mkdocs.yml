@@ -3,8 +3,9 @@ site_name: 総合解析トレーニングコース
 nav:
   - ホーム: index.md
   - 事前準備: setup.md
-  - Linux/UNIX入門: linux_unix.md
-  - ネットワーク入門: network.md
+  - Linux入門(1): linux_usage01.md
+  - Linux入門(2): linux_usage02.md
+  - 計算機ネットワーク入門: network.md
   - Git/GitHub入門: git_github.md
   - VSCode入門: vscode.md
   - Python入門: python.md
