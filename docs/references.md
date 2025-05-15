@@ -6,6 +6,7 @@
 - [Linux入門 (LFS101-JP) The Linux Foundation](https://training.linuxfoundation.org/ja/training/introduction-to-linux-lfs101-jp/)
 - [明治大学生田メディア支援事務室 UNIXの手引き](https://www.meiji.ac.jp/isys/doc/UNIX2019.pdf) (PDF)
 - [「新しいLinuxの教科書」三宅 英明、大角 祐介](https://www.sbcr.jp/product/4797380941/) (書籍)
+- [VA Linux -- 新Linuxカーネル解読室](https://www.valinux.co.jp/blog/archive/category/%E6%96%B0Linux%E3%82%AB%E3%83%BC%E3%83%8D%E3%83%AB%E8%A7%A3%E8%AA%AD%E5%AE%A4) (実装面を知りたい人向き)
 
 ## 計算機ネットワーク
 
