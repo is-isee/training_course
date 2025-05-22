@@ -1,13 +1,24 @@
 site_name: 総合解析トレーニングコース
 
 nav:
-  - ホーム: index.md
+  - このコースの目的: index.md
   - 事前準備: setup.md
-  - Linux入門(1): linux_usage01.md
-  - Linux入門(2): linux_usage02.md
+  - Linux入門:
+    - LinuxとUNIX系OS: linux/linux_and_unix.md
+    - シェルとターミナル: linux/shell.md
+    - ヘルプとマニュアル: linux/help_and_man.md
+    - ファイル・ディレクトリの操作: linux/file_and_directory.md
+    - テキストファイルの操作: linux/text_file.md
+    - プロセスの操作: linux/process.md
+    - システム情報の利用: linux/system.md
   - 計算機ネットワーク入門: network.md
   - Git/GitHub入門: git_github.md
   - VSCode入門: vscode.md
+  - 作業の自動化:
+    - 研究と自動化: automation/need.md
+    - シェルスクリプト: automation/shell_script.md
+    - make と Makefile: automation/makefile.md
+    - 仮想化とコンテナ: automation/container.md
   - Python入門: python.md
   - データ解析入門: data_analysis.md
   - 数値計算入門: numerical_simulation.md
@@ -20,6 +31,9 @@ theme:
   features:
     - header.autohide
     # - toc.integrate
+    # - navigation.tabs
+    # - navigation.expand
+    - navigation.sections
   palette:
     primary: blue grey
 
