@@ -11,17 +11,25 @@ nav:
     - テキストファイルの操作: linux/text_file.md
     - プロセスの操作: linux/process.md
     - システム情報の利用: linux/system.md
-  - 計算機ネットワーク入門: network.md
-  - Git/GitHub入門: git_github.md
-  - VSCode入門: vscode.md
+  - 計算機ネットワーク入門:
+    - ネットワークの基本的な仕組み: network/tcp_ip.md
+    - 便利なネットワークコマンド: network/command.md
+    - 補足情報: network/appendix.md
+  - Git/GitHub入門:
+    - バージョン管理とGit: git_github/versioning.md
+    - Gitを使ってみよう: git_github/git_local.md
+    - リモートリポジトリの活用: git_github/git_remote.md
+    - GitHubを使ってみよう: git_github/github.md
+    - 共同開発を始めよう: git_github/collaboration.md
+  - VSCode入門(執筆中): vscode.md
   - 作業の自動化:
     - 研究と自動化: automation/need.md
     - シェルスクリプト: automation/shell_script.md
     - make と Makefile: automation/makefile.md
     - 仮想化とコンテナ: automation/container.md
-  - Python入門: python.md
-  - データ解析入門: data_analysis.md
-  - 数値計算入門: numerical_simulation.md
+  - Python入門(執筆中): python.md
+  - データ解析入門(執筆中): data_analysis.md
+  - 数値計算入門(執筆中): numerical_simulation.md
   - 参考文献: references.md
 
 theme:
@@ -33,7 +41,7 @@ theme:
     # - toc.integrate
     # - navigation.tabs
     # - navigation.expand
-    - navigation.sections
+    # - navigation.sections
   palette:
     primary: blue grey
 

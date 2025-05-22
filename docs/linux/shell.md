@@ -21,7 +21,7 @@ Linuxを操作する上で基本となるのが、**シェル**と**ターミナ
 - `Ctrl-D`: 標準入力の EOF シグナルを送信 (対話型シェルを終了)
 - `reset`: ターミナルの表示が乱れた際に、表示を初期状態に戻す
 
-## 実行中のコマンドを中断する `Ctrl-C`
+## コマンドを中断する `Ctrl-C`
 
 - 終了までに長い時間がかかるコマンドを中断する場合、`Ctrl-C`を押すと強制終了可能
 
@@ -121,20 +121,22 @@ $ bash -c 'echo $MYVAR'   # 環境変数は子プロセスでも参照可能
 hello
 ```
 
-## 環境変数 PATH とコマンドの呼び出し
+## 環境変数 PATH
 
-- `PATH` はコロン区切りのディレクトリリスト  
+シェルはコマンドを探す際に環境変数 `PATH` に記述されたディレクトリを探索していきます。もし `command not found` のようなエラーが出る場合、`PATH`が適切に指定されていない可能性があります。
+
+- `PATH`: コロン区切りのディレクトリリスト  
 - シェルは左から順に実行ファイルを検索  
-- 確認: `which <cmd>` / `which -a <cmd>` / `type <cmd>`  
+- 動作確認: `which <cmd>` / `which -a <cmd>` / `type <cmd>`  
 
 ```bash
 $ echo $PATH
 /usr/local/bin:/usr/bin:/bin:...
 
-$ which python
+$ which python  # python と指定した時に呼び出される実行ファイルを表示
 /usr/bin/python
 
-$ which -a python
+$ which -a python  # PATHに含まれる全ての実行ファイルを表示
 /usr/bin/python
 /usr/local/bin/python
 ```
