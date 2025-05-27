@@ -38,6 +38,7 @@ theme:
   language: ja
   features:
     - header.autohide
+    - content.code.copy
     # - toc.integrate
     # - navigation.tabs
     # - navigation.expand
