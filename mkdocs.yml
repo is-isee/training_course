@@ -30,10 +30,10 @@ nav:
   - Python入門(執筆中): python.md
   - データ解析入門(執筆中): data_analysis.md
   - 数値計算入門(執筆中): numerical_simulation.md
+  - サーバー管理の手引き: server_management.md
   - 参考文献: references.md
 
 theme:
-  # name: readthedocs
   name: material
   language: ja
   features:
