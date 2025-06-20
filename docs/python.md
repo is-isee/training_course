@@ -27,7 +27,3 @@ NumPyも[非常に多くの学習用資料](https://numpy.org/ja/learn/)が存�
 [Matplotlib](https://matplotlib.org/)はNumPyと密接に連携した可視化ツールです。
 非常に多くのことが出来るので、特に3次元可視化以外はこれで済むことが多いでしょう。
 ひとまず[Matplotlib公式チュートリアル](https://matplotlib.org/stable/tutorials/index.html)の"Quick start guide"、"Customizing Matplotlib with style sheets and rcParams"、"Animations using Matplotlib"だけ読んでしまいましょう。
-
-## 典型的な解析・可視化の実例
-
--- 執筆中 --
