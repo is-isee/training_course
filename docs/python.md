@@ -1,64 +1,32 @@
 # Python入門
 
-## 再現性と自動化の意味での `venv` と `argparse`
-
-## 疎結合なモジュール化を目指そう
+本記事は執筆中です。
 
 ## 環境設定
 
-- ライブラリのインストール
-- (`pyenv`によるCPythonのバージョン管理 (CIDAS の scfront2021 は 3.6))
-- 依存性地獄からの脱出 `venv`
-- 対話環境とPythonスクリプト
-- Jupyter
+-- 執筆中 --
 
-## リテラルと変数
+## 基礎文法
 
-- `id`
-- `print`
-- `help`
+Pythonのチュートリアルは世界中いたるところに存在します。ひとまず[Python公式チュートリアル](https://docs.python.org/ja/3/tutorial/)を参照してください。
 
-## 制御文
+- 全くPythonを学んだことがない人: 2-7章
+- Pythonを使って研究したい人: 9章(クラス)、10章・11章(標準ライブラリ)、12章
 
-- `if`
-- `for`
-- `itertools`
+## NumPy
 
-## 関数
+[NumPy](https://numpy.org/)は特に配列や浮動小数点を使った科学技術計算をする場合に基礎となるライブラリです。後述のMatplotlibもNumPyに依存しています。
 
-- 動作確認に `assert` を使おう
+NumPyも[非常に多くの学習用資料](https://numpy.org/ja/learn/)が存在しています。
+ひとまずNumPy公式ドキュメントの[NumPy quickstart](https://numpy.org/doc/stable/user/quickstart.html)および[NumPy: the absolute basics for beginners](https://numpy.org/doc/stable/user/absolute_beginners.html)を読んでください。
+様々なクラスや関数が定義されていますが、ここで出たもの以外は徐々に覚えていきましょう。
 
-## クラス
+## Matplotlib
 
-- Pythonの命名規則
-- **演習**: コードのリファクタリング (関数・クラスの活用)
+[Matplotlib](https://matplotlib.org/)はNumPyと密接に連携した可視化ツールです。
+非常に多くのことが出来るので、特に3次元可視化以外はこれで済むことが多いでしょう。
+ひとまず[Matplotlib公式チュートリアル](https://matplotlib.org/stable/tutorials/index.html)の"Quick start guide"、"Customizing Matplotlib with style sheets and rcParams"、"Animations using Matplotlib"だけ読んでしまいましょう。
 
-## 色々なデータ構造
+## 典型的な解析・可視化の実例
 
-- `tuple`
-- `list`
-- `dict`
-
-## ファイル入出力
-
-- `json`
-- `tomllib`
-- `pickle`
-
-## ファイル・プロセス操作
-
-- `pathlib`
-- `shutil`
-- `argparse`
-- `subprocess`
-- `multiprocessing`
-
-## ライブラリ開発者向き
-
-- `typing` と型アノテーション (+ `mypy`)
-- `unittest` による単体テスト
-- `logging`
-
-## 標準ライブラリの一覧
-
-- <https://docs.python.org/ja/3.13/library/index.html>
+-- 執筆中 --
