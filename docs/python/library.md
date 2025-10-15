@@ -238,7 +238,7 @@ plt.plot(x, y)
 plt.show()  # グラフを描画
 ```
 
-![](library_files/figure-commonmark/cell-15-output-1.jpeg)
+![](library_files/figure-commonmark/cell-15-output-1.svg)
 
 Jupyter Notebook ではセルの区切りで自動で描画されるので、`plt.show()`
 が必ず必要な訳では無い。
@@ -256,7 +256,7 @@ plt.yscale("log")  # y 軸を対数に変更
 plt.show()
 ```
 
-![](library_files/figure-commonmark/cell-16-output-1.jpeg)
+![](library_files/figure-commonmark/cell-16-output-1.svg)
 
 複数の線を書き、それぞれにラベルを付けるなら以下のようになる。
 比較のために、定数を描画し、 $x$ 軸、 $y$ 軸の名前も付けてみよう。
@@ -288,7 +288,7 @@ plt.ylabel("y = exp(x + 2)")  # y 軸に名前を設定
 plt.show()
 ```
 
-![](library_files/figure-commonmark/cell-17-output-1.jpeg)
+![](library_files/figure-commonmark/cell-17-output-1.svg)
 
 その他にも多くの機能があるため、[Matplotlibのドキュメント](https://matplotlib.org/stable/users/)
 を参考にして各自調べて欲しい。
