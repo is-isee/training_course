@@ -1,19 +1,41 @@
 # Python 入門 – ライブラリ
 
-2025-10-15T15:03:19
+2025-10-15T15:27:56
 
-- [<span class="toc-section-number">1</span> 数値計算ライブラリ
+- [<span class="toc-section-number">1</span> 用語の整理](#用語の整理)
+- [<span class="toc-section-number">2</span> 数値計算ライブラリ
   NumPy](#数値計算ライブラリ-numpy)
-- [<span class="toc-section-number">2</span> 可視化ライブラリ
+- [<span class="toc-section-number">3</span> 可視化ライブラリ
   Matplotlib](#可視化ライブラリ-matplotlib)
-- [<span class="toc-section-number">3</span>
+- [<span class="toc-section-number">4</span>
   ヘルプとドキュメント](#ヘルプとドキュメント)
-- [<span class="toc-section-number">4</span> 練習](#練習-1)
+- [<span class="toc-section-number">5</span> 練習](#練習-1)
 
 [![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/is-isee/training_course/blob/main/docs/python/library.ipynb)
 
-Pythonには非常に様々なライブラリがある。 `import`
+Pythonを利用する最大の利点は、そのユーザー数と膨大なライブラリである。
+`import`
 文を使ってライブラリを呼び出すことで、各ライブラリが提供する様々な機能を利用することができる。
+
+## 用語の整理
+
+一言に Python
+の「ライブラリ」と言っても、実際にはいくつかの異なる概念を含んでいる。以下に一覧を示す。
+
+- **モジュール (module)**: `xxx.py` の 1 ファイル 1
+  個。インポートすると、その **名前空間**
+  に定数・関数・クラスなどが配置される。
+- **パッケージ (package)**: 階層構造を持つ
+  **モジュールの入れ物**。例えば、 `my_package/__init__.py`
+  を含むディレクトリ (名前空間パッケージ PEP 420 では `__init__.py`
+  が無くてもOK)。
+- **ディストリビューション**: `pip install ...`
+  でインストールされるパッケージの配布単位。インポート名と異なる場合があるので注意（例:
+  `pip install pillow` だが `import PIL`）。
+- **ライブラリ**: 上記の総称。何を指すのかは文脈による。
+- **標準ライブラリ**: Python
+  本体に同梱され、追加インストール不要（`math`, `pathlib`, `asyncio`
+  など）なライブラリ群。
 
 ## 数値計算ライブラリ NumPy
 
