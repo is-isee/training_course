@@ -12,10 +12,10 @@ md: $(MD)
 nb: $(IPYNB)
 
 %.md: %.qmd _quarto.yml
-	quarto render "$<" --to gfm --output "$@" --quiet
+	quarto render "$<" --to gfm --output "$@"
 
 %.ipynb: %.qmd _quarto.yml
-	quarto render "$<" --to ipynb --no-execute --output "$@" --quiet
+	quarto render "$<" --to ipynb --no-execute --output "$@"
 
 clean:
 	rm -f $(MD) $(IPYNB)

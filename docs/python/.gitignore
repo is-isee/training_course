@@ -3,4 +3,5 @@
 .jupyter_cache/
 _freeze/
 !*.ipynb
+!*.png
 
