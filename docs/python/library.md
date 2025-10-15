@@ -1,16 +1,5 @@
-# Python 入門 – ライブラリ
+# Python のライブラリ
 
-2025-10-15T17:08:55
-
-- [<span class="toc-section-number">1</span> 用語の整理](#用語の整理)
-- [<span class="toc-section-number">2</span> 数値計算ライブラリ
-  NumPy](#数値計算ライブラリ-numpy)
-- [<span class="toc-section-number">3</span> 可視化ライブラリ
-  Matplotlib](#可視化ライブラリ-matplotlib)
-- [<span class="toc-section-number">4</span>
-  ヘルプとドキュメント](#ヘルプとドキュメント)
-- [<span class="toc-section-number">5</span> 演習:
-  浮動小数点](#演習-浮動小数点)
 
 [![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/is-isee/training_course/blob/main/docs/python/library.ipynb)
 

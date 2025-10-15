@@ -18,4 +18,4 @@ all: $(TARGET)
 
 .PHONY: clean
 clean:
-	rm -f $(MD) $(IPYNB)
+	rm -rf $(MD) $(IPYNB) *_files/

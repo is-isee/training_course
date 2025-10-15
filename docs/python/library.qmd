@@ -1,5 +1,5 @@
 ---
-title: "Python 入門 -- ライブラリ"
+title: "Python のライブラリ"
 ---
 
 [![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/is-isee/training_course/blob/main/docs/python/library.ipynb)

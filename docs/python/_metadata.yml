@@ -1,11 +1,4 @@
-date: last-modified
-date-format: YYYY-MM-DDTHH:mm:ss
-
 format:
   ipynb: default
   gfm:
     fig-format: svg
-    toc: true
-    toc-depth: 2
-    number-sections: true
-    code-line-numbers: true
