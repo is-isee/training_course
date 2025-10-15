@@ -1,5 +1,12 @@
 # Python 入門 – 事前準備
 
+2025-10-15T14:30:39
+
+- [<span class="toc-section-number">1</span> はじめに](#はじめに)
+- [<span class="toc-section-number">2</span>
+  セルの基本操作](#セルの基本操作)
+- [<span class="toc-section-number">3</span> 注意: Notebook
+  におけるセルの実行順序について](#注意-notebook-におけるセルの実行順序について)
 
 Python を学習するため、本コースでは Jupyter Notebook を利用する。
 この資料では、その準備のための情報を紹介する。

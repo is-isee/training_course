@@ -5,17 +5,17 @@
 QMD   := $(wildcard *.qmd)
 MD    := $(QMD:.qmd=.md)
 IPYNB := $(QMD:.qmd=.ipynb)
+TARGET := $(MD) $(IPYNB)
 
-.PHONY: all md nb clean
-all: md nb
-md: $(MD)
-nb: $(IPYNB)
-
-%.md: %.qmd _quarto.yml
+%.md: %.qmd _metadata.yml
 	quarto render "$<" --to gfm --output "$@"
 
-%.ipynb: %.qmd _quarto.yml
+%.ipynb: %.qmd _metadata.yml
 	quarto render "$<" --to ipynb --no-execute --output "$@"
 
+.PHONY: all
+all: $(TARGET)
+
+.PHONY: clean
 clean:
 	rm -f $(MD) $(IPYNB)
