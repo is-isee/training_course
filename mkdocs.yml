@@ -27,7 +27,10 @@ nav:
     - シェルスクリプト: automation/shell_script.md
     - make と Makefile: automation/makefile.md
     - 仮想化とコンテナ: automation/container.md
-  - Python入門(執筆中): python.md
+  - Python入門(執筆中):
+    - 事前準備: python/prep.md
+    - 基礎文法: python/basic.md
+    - ライブラリの利用: python/library.md
   - データ解析入門(執筆中): data_analysis.md
   - 数値計算入門(執筆中): numerical_simulation.md
   - サーバー管理の手引き: server_management.md

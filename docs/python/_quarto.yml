@@ -1,0 +1,20 @@
+project:
+  type: default
+  render: []
+
+freeze: auto
+execute:
+  cache: true
+  eval: false
+
+date: last-modified
+date-format: YYYY-MM-DDTHH:mm:ss
+
+format:
+  ipynb: default
+  gfm:
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    code-line-numbers: true
+    df-print: paged
