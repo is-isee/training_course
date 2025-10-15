@@ -1,6 +1,6 @@
 # Python 入門 – 基礎文法
 
-2025-10-15T14:30:39
+2025-10-15T14:58:55
 
 - [<span class="toc-section-number">1</span> リテラル
   (固定値)](#リテラル-固定値)
@@ -14,6 +14,8 @@
 - [<span class="toc-section-number">9</span>
   組み込みデータ構造](#組み込みデータ構造)
 - [<span class="toc-section-number">10</span> 練習](#練習)
+
+[![](https://colab.research.google.com/assets/colab-badge.svg)](basic.ipynb)
 
 この資料では、 Python の基礎的な文法を紹介する。
 

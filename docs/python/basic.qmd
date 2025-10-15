@@ -2,6 +2,8 @@
 title: "Python 入門 -- 基礎文法"
 ---
 
+[![open in colab](https://colab.research.google.com/assets/colab-badge.svg)](basic.ipynb)
+
 この資料では、 Python の基礎的な文法を紹介する。
 
 ## リテラル (固定値)

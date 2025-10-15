@@ -1,6 +1,6 @@
 # Python 入門 – ライブラリ
 
-2025-10-15T14:30:39
+2025-10-15T14:58:54
 
 - [<span class="toc-section-number">1</span> 数値計算ライブラリ
   NumPy](#数値計算ライブラリ-numpy)
@@ -9,6 +9,8 @@
 - [<span class="toc-section-number">3</span>
   ヘルプとドキュメント](#ヘルプとドキュメント)
 - [<span class="toc-section-number">4</span> 練習](#練習-1)
+
+[![](https://colab.research.google.com/assets/colab-badge.svg)](library.ipynb)
 
 Pythonには非常に様々なライブラリがある。 `import`
 文を使ってライブラリを呼び出すことで、各ライブラリが提供する様々な機能を利用することができる。
