@@ -21,12 +21,7 @@ nav:
     - リモートリポジトリの活用: git_github/git_remote.md
     - GitHubを使ってみよう: git_github/github.md
     - 共同開発を始めよう: git_github/collaboration.md
-  - VSCode入門(執筆中): vscode.md
-  - 作業の自動化:
-    - 研究と自動化: automation/need.md
-    - シェルスクリプト: automation/shell_script.md
-    - make と Makefile: automation/makefile.md
-    - 仮想化とコンテナ: automation/container.md
+  - VSCode入門: vscode.md
   - Python入門:
     - 事前準備: python/prep.md
     - 基礎文法: python/basic.md
@@ -34,6 +29,11 @@ nav:
     - 仮想環境: python/venv.md
   - データ解析入門(執筆中): data_analysis.md
   - 数値計算入門(執筆中): numerical_simulation.md
+  - 作業の自動化:
+    - 研究と自動化: automation/need.md
+    - シェルスクリプト: automation/shell_script.md
+    - make と Makefile: automation/makefile.md
+    - 仮想化とコンテナ: automation/container.md
   - サーバー管理の手引き: server_management.md
   - 参考文献: references.md
 
