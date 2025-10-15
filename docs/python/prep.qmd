@@ -47,6 +47,12 @@ Google Colab 上でNotebookを実行し、結果を保存するため、Google�
 Google ColabではなくVSCodeなど自前の実行環境で作業したい人はそれで問題ない。
 ただし、講師やTAによるサポートはGoogle Colab上での実行を前提とするため、実行環境に由来する問題は自分で解決する必要がある。
 
+## Google Colab でこのノートを開く
+
+以下の `Open in Colab` ボタンを押すと、Colab 上で現在閲覧しているノートブックを開く事ができる。
+
+[![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/is-isee/training_course/blob/main/docs/python/prep.ipynb)
+
 ## セルの基本操作
 
 Notebook には**セル**という単位が存在し、コードの入力や実行はセルごとに行われる。

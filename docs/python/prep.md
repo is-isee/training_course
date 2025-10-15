@@ -1,11 +1,13 @@
 # Python 入門 – 事前準備
 
-2025-10-15T14:30:39
+2025-10-15T15:11:20
 
 - [<span class="toc-section-number">1</span> はじめに](#はじめに)
-- [<span class="toc-section-number">2</span>
+- [<span class="toc-section-number">2</span> Google Colab
+  でこのノートを開く](#google-colab-でこのノートを開く)
+- [<span class="toc-section-number">3</span>
   セルの基本操作](#セルの基本操作)
-- [<span class="toc-section-number">3</span> 注意: Notebook
+- [<span class="toc-section-number">4</span> 注意: Notebook
   におけるセルの実行順序について](#注意-notebook-におけるセルの実行順序について)
 
 Python を学習するため、本コースでは Jupyter Notebook を利用する。
@@ -63,6 +65,13 @@ Google
 ColabではなくVSCodeなど自前の実行環境で作業したい人はそれで問題ない。
 ただし、講師やTAによるサポートはGoogle
 Colab上での実行を前提とするため、実行環境に由来する問題は自分で解決する必要がある。
+
+## Google Colab でこのノートを開く
+
+以下の `Open in Colab` ボタンを押すと、Colab
+上で現在閲覧しているノートブックを開く事ができる。
+
+[![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/is-isee/training_course/blob/main/docs/python/prep.ipynb)
 
 ## セルの基本操作
 
