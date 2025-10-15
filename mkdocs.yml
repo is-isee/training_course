@@ -2,8 +2,8 @@ site_name: 総合解析トレーニングコース
 
 nav:
   - このコースの目的: index.md
-  - 事前準備: setup.md
   - Linux入門:
+    - 事前準備: linux/prep.md
     - LinuxとUNIX系OS: linux/linux_and_unix.md
     - シェルとターミナル: linux/shell.md
     - ヘルプとマニュアル: linux/help_and_man.md
@@ -12,16 +12,20 @@ nav:
     - プロセスの操作: linux/process.md
     - システム情報の利用: linux/system.md
   - 計算機ネットワーク入門:
+    - 事前準備: network/prep.md
     - ネットワークの基本的な仕組み: network/tcp_ip.md
     - 便利なネットワークコマンド: network/command.md
     - 補足情報: network/appendix.md
   - Git/GitHub入門:
+    - 事前準備: git_github/prep.md
     - バージョン管理とGit: git_github/versioning.md
     - Gitを使ってみよう: git_github/git_local.md
     - リモートリポジトリの活用: git_github/git_remote.md
     - GitHubを使ってみよう: git_github/github.md
     - 共同開発を始めよう: git_github/collaboration.md
-  - VSCode入門: vscode.md
+  - VSCode入門:
+    - 事前準備: vscode/prep.md
+    - VSCode入門: vscode/basic.md
   - Python入門:
     - 事前準備: python/prep.md
     - 基礎文法: python/basic.md

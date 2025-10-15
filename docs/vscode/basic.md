@@ -3,10 +3,6 @@
 [VSCode (Visual Studio Code)](https://code.visualstudio.com/) は無料で利用できる統合開発環境で、Windows/macOS/Linuxで動作します。
 非常に多くの機能があるため、詳しい利用方法は[公式ドキュメント](https://code.visualstudio.com/docs)を参照してください。
 
-## VSCodeのインストール
-
-VSCodeのインストール方法は、[公式ドキュメント](https://code.visualstudio.com/docs/setup/setup-overview)を参照してください。
-
 ## コマンドパレット
 
 VSCodeの多くの機能はコマンドパレットから利用できます。
@@ -91,11 +87,7 @@ VSCodeはリモートサーバへSSHで接続し、リモートサーバ上の�
 リモートサーバへ接続するには、[Remote - SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh) という拡張機能をインストールします。
 拡張機能のインストールは、左側のサイドバーにある四角いアイコンをクリックし、検索ボックスに "Remote - SSH" と入力して行います。
 
-## (Windows のみ) WSLの利用
-
-Windows 上で研究や開発を行う場合、WSL (Windows Subsystem for Linux) を利用することをお勧めします。
-WSLを利用することで、Linux上で動作する多くのツールをWindows上で利用できるようになります。
-WSLの導入方法については、[Microsoftの公式ドキュメント](https://learn.microsoft.com/ja-jp/windows/wsl/install)を参照してください。
+## (Windows のみ) WSLとの接続
 
 VSCode はMicrosoft製のソフトウェアであり、WSL2上で動作するVSCodeをWindows上で利用することができます。
 VSCodeでWSLへ接続する方法については、[こちらのドキュメント](https://learn.microsoft.com/ja-jp/windows/wsl/tutorials/wsl-vscode)を参照してください。

@@ -1,28 +1,6 @@
 # 事前準備
 
-トレーニングコースの実習ではLinuxやCIDASシステムを使います。
-実習前に各自で以下の準備を終えるようにしてください。
-
-## ターミナル環境・SSHクライアントの準備
-
-Linux/UNIX入門を始める前に、ターミナル環境およびSSHクライアントの準備が必要です。
-
-### Windowsの場合
-
-WSL2 (Windows SUbsystem for Linux 2) を使うとWindows上でLinuxを利用できます。公式情報は <https://learn.microsoft.com/ja-jp/windows/wsl/install> にあります。
-
-まず PowerShell またはコマンドプロンプトから以下のコマンドを実行し、画面に表示される指示に従う (おそらく再起動が必要になる)。
-
-```powershell
-PS C:\Users\<username>> wsl --install
-```
-
-スタートメニューに Ubuntu がアプリとして追加されるはずです。
-Ubuntu を実行し、ユーザーとパスワードの設定を行ってください。
-
-### macOSの場合
-
-BSD UNIXがベースなのでもともとインストールされている `ターミナル.app` を使うことができます。
+「ネットワーク入門」へ進む前に、以下の準備を行ってください。
 
 ## CIDASシステムへの利用申請・接続設定
 
@@ -142,7 +120,3 @@ Windows11上でWSL2を利用する場合も[`keychain`をインストールす�
 
 - ECDSA公開鍵暗号化方式(鍵長 256 bits, 384 bits もしくは 521 bits)
 - Ed25519公開鍵暗号化方式
-
-## GitHubアカウントの取得
-
-Git/GitHub入門を開始する前に、[GitHub](https://github.com/)のアカウントを取得し、実習に利用するPCの公開鍵を登録しておきましょう。なお、GitHubアカウントは利用規約により1人1アカウントと定められているので注意してください。
