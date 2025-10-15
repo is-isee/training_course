@@ -4,4 +4,5 @@
 _freeze/
 !*.ipynb
 !*.png
+!*.jpeg
 

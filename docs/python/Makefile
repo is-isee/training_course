@@ -8,7 +8,7 @@ IPYNB := $(QMD:.qmd=.ipynb)
 TARGET := $(MD) $(IPYNB)
 
 %.md: %.qmd _metadata.yml
-	quarto render "$<" --to gfm --output "$@"
+	quarto render "$<" --to gfm --execute --no-cache --output "$@"
 
 %.ipynb: %.qmd _metadata.yml
 	quarto render "$<" --to ipynb --no-execute --output "$@"

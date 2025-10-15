@@ -34,9 +34,13 @@
 type(3.14)
 ```
 
+    float
+
 ``` python
 type("Hello!")
 ```
+
+    str
 
 複数行の文字列リテラルは以下のように書くことも出来る。
 
@@ -47,6 +51,8 @@ type("Hello!")
 文字列です
 """
 ```
+
+    '\nこれは\n複数行の\n文字列です\n'
 
 ## `print` 文
 
@@ -69,11 +75,18 @@ print("This is 1st line.")
 print("This is 2nd line.")
 ```
 
+    This is 1st line.
+    This is 2nd line.
+
 自動で型を認識して出力してくれる。改行文字などの特殊文字も利用出来る。
 
 ``` python
 print("a = ", 1, "\nb = ", 3.14, "\ntype(b) = ", type(3.14))
 ```
+
+    a =  1 
+    b =  3.14 
+    type(b) =  <class 'float'>
 
 ここまで`print`文を使わなくても値が得られていたことを不思議に思うかもしれない。
 これは、セル内で最後に実行した文の返り値をNotebookが出力してくれるためである。
@@ -81,6 +94,8 @@ print("a = ", 1, "\nb = ", 3.14, "\ntype(b) = ", type(3.14))
 ``` python
 "Hello World!"
 ```
+
+    'Hello World!'
 
 ## 変数の定義
 
@@ -114,12 +129,18 @@ a = "Hello"
 print(a)
 ```
 
+    1
+    3.14
+    Hello
+
 ## コメント
 
 ``` python
 # この行はコメント
 print(1)  # 行の途中からでもコメントになる
 ```
+
+    1
 
 ## 各種演算子
 
@@ -132,6 +153,11 @@ print(4 / 3, 4 // 3)  # int型への除算 / は float に変換される。切�
 print(2.0**3)  # べき乗
 print(3**2 == 9, 3 < 2, 4 <= 4)  # 比較
 ```
+
+    3
+    1.3333333333333333 1
+    8.0
+    True False True
 
 ここで、`#` 以降はコメント文として扱われる。
 
@@ -147,6 +173,8 @@ if price_apple < price_banana:
 else:
     print("バナナが安い")
 ```
+
+    りんごが安い
 
 ここで注意したいのが、Pythonにおけるインデントの重要性である。
 例えば、上のコードを以下のように書くとエラー (`IndentationError`)
@@ -174,6 +202,10 @@ else:
     print("バナナが安い")
 ```
 
+    りんごが安い
+    りんごが安い
+    りんごが安い
+
 ## 繰り返し
 
 `for` 文を用いて以下のように書ける。
@@ -182,6 +214,10 @@ else:
 for i in range(0, 3):
     print(i)
 ```
+
+    0
+    1
+    2
 
 ここで、`i == 3` の場合は実行されないことに注意する。
 `range(start, stop, step)`
@@ -208,6 +244,13 @@ for i in range(0, 10000):  # 何もしなければ 1 万回繰り返されるル
         break  # break 文が実行されると for 文は終了
 ```
 
+    0
+    1
+    2
+    3
+    4
+    5
+
 ## 関数
 
 関数は以下のように定義出来る。
@@ -224,6 +267,9 @@ print(add(1, 2))
 print(add(3.0, -2.5))
 ```
 
+    3
+    0.5
+
 関数呼び出しでは、どの引数にどのリテラル・変数を対応させるかを明示的に指定できる。
 
 ``` python
@@ -234,6 +280,9 @@ def sub(a, b):
 print(sub(a=1, b=2))
 print(sub(b=-3.0, a=2.5))
 ```
+
+    -1
+    5.5
 
 積極的に利用することで、引数が多い関数 (目安は4-5個以上)
 を呼び出す際にバグを減らすことができる。
@@ -256,6 +305,10 @@ a.clear()
 print(a)
 ```
 
+    [1, 2, 3]
+    [1, 2, 3, 4]
+    []
+
 `for` 文と組み合わせると便利に使える。
 
 ``` python
@@ -264,12 +317,20 @@ for e in b:
     print(e)
 ```
 
+    1
+    c
+    3.14
+
 添字でアクセスすることも出来る。
 
 ``` python
 for i in range(0, len(b)):  # len(b) は b の要素数を返す
     print(i, b[i])
 ```
+
+    0 1
+    1 c
+    2 3.14
 
 `in` を使うと要素がリストに含まれるかを判別できる。
 
@@ -278,6 +339,10 @@ print('a' in b)
 print('c' in b)
 print(1 in b)
 ```
+
+    False
+    True
+    True
 
 連想配列は `dict` 型 (辞書型)
 である。C言語の構造体の代わりにも使いやすい。
@@ -290,10 +355,15 @@ d[3.14] = "pi"
 print(d)
 ```
 
+    {'a': 2, 2: 5.14, 3.14: 'pi'}
+
 ``` python
 print(d[3.14])
 print(d[2])
 ```
+
+    pi
+    5.14
 
 `for`文との組み合わせは、添字(キー)、値、その両者のそれぞれで3通りが代表的である。
 
@@ -302,15 +372,27 @@ for key in d.keys():
     print(key)
 ```
 
+    a
+    2
+    3.14
+
 ``` python
 for value in d.values():
     print(value)
 ```
 
+    2
+    5.14
+    pi
+
 ``` python
 for key, value in d.items():
     print(key, value)
 ```
+
+    a 2
+    2 5.14
+    3.14 pi
 
 ## 練習
 
