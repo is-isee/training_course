@@ -268,7 +268,7 @@ for key, value in d.items():
     print(key, value)
 ```
 
-## 練習
+## 演習: フィボナッチ数列の計算
 
 フィボナッチ数列 $F_n$ は以下のように定義される。
 $$

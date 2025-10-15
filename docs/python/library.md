@@ -1,6 +1,6 @@
 # Python 入門 – ライブラリ
 
-2025-10-15T15:27:56
+2025-10-15T17:08:55
 
 - [<span class="toc-section-number">1</span> 用語の整理](#用語の整理)
 - [<span class="toc-section-number">2</span> 数値計算ライブラリ
@@ -9,7 +9,8 @@
   Matplotlib](#可視化ライブラリ-matplotlib)
 - [<span class="toc-section-number">4</span>
   ヘルプとドキュメント](#ヘルプとドキュメント)
-- [<span class="toc-section-number">5</span> 練習](#練習-1)
+- [<span class="toc-section-number">5</span> 演習:
+  浮動小数点](#演習-浮動小数点)
 
 [![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/is-isee/training_course/blob/main/docs/python/library.ipynb)
 
@@ -34,7 +35,7 @@ Pythonを利用する最大の利点は、そのユーザー数と膨大なラ�
   `pip install pillow` だが `import PIL`）。
 - **ライブラリ**: 上記の総称。何を指すのかは文脈による。
 - **標準ライブラリ**: Python
-  本体に同梱され、追加インストール不要（`math`, `pathlib`, `asyncio`
+  本体に同梱され、追加インストール不要（`math`, `pathlib`, `functools`
   など）なライブラリ群。
 
 ## 数値計算ライブラリ NumPy
@@ -317,7 +318,7 @@ plt.show()
 その他にも多くの機能があるため、[Matplotlibのドキュメント](https://matplotlib.org/stable/users/)
 を参考にして各自調べて欲しい。
 
-### 練習
+### 演習: グラフの描画
 
 1.  区間 $0 \le x \le 2\pi$ を 100 分割し、配列 `x` を作成せよ。
 2.  配列 `y = np.sin(x)` を計算し、ラベルを `"y = sin(x)"`
@@ -359,7 +360,7 @@ help(print)
 Pythonのライブラリは数多くあるがドキュメントの書かれ方はどれも同様である。
 実装に迷ったら適宜参照し、ドキュメントを読む力を養うと良い。
 
-## 練習
+## 演習: 浮動小数点
 
 Python公式ドキュメント内の[Python チュートリアル \>\> 15.
 浮動小数点演算、その問題と制限](https://docs.python.org/ja/3/tutorial/floatingpoint.html)を読み、`a = 1.0`

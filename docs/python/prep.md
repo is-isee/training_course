@@ -1,13 +1,15 @@
 # Python 入門 – 事前準備
 
-2025-10-15T15:11:20
+2025-10-15T17:07:48
 
 - [<span class="toc-section-number">1</span> はじめに](#はじめに)
 - [<span class="toc-section-number">2</span> Google Colab
   でこのノートを開く](#google-colab-でこのノートを開く)
 - [<span class="toc-section-number">3</span>
   セルの基本操作](#セルの基本操作)
-- [<span class="toc-section-number">4</span> 注意: Notebook
+- [<span class="toc-section-number">4</span> 演習:
+  セルの基本操作](#演習-セルの基本操作)
+- [<span class="toc-section-number">5</span> 注意: Notebook
   におけるセルの実行順序について](#注意-notebook-におけるセルの実行順序について)
 
 Python を学習するため、本コースでは Jupyter Notebook を利用する。
@@ -105,7 +107,7 @@ Markdownについては詳しく説明しないが、数式等も書けるテキ
 
 セルをクリックし、右上のゴミ箱ボタン 🗑️ を押すとセルが削除される。
 
-### 練習
+## 演習: セルの基本操作
 
 1.  このセルの下に、コードセルとテキストセルを一つづつ挿入せよ。
 2.  コードセルに `print("Hello World!")` と入力し、セルを実行せよ。

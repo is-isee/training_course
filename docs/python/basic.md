@@ -1,6 +1,6 @@
 # Python 入門 – 基礎文法
 
-2025-10-15T15:03:20
+2025-10-15T17:07:11
 
 - [<span class="toc-section-number">1</span> リテラル
   (固定値)](#リテラル-固定値)
@@ -13,7 +13,8 @@
 - [<span class="toc-section-number">8</span> 関数](#関数)
 - [<span class="toc-section-number">9</span>
   組み込みデータ構造](#組み込みデータ構造)
-- [<span class="toc-section-number">10</span> 練習](#練習)
+- [<span class="toc-section-number">10</span> 演習:
+  フィボナッチ数列の計算](#演習-フィボナッチ数列の計算)
 
 [![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/is-isee/training_course/blob/main/docs/python/basic.ipynb)
 
@@ -396,7 +397,7 @@ for key, value in d.items():
     2 5.14
     3.14 pi
 
-## 練習
+## 演習: フィボナッチ数列の計算
 
 フィボナッチ数列 $F_n$ は以下のように定義される。 $$
 F_0 = 0
