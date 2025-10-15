@@ -2,7 +2,7 @@
 title: "Python 入門 -- ライブラリ"
 ---
 
-[![open in colab](https://colab.research.google.com/assets/colab-badge.svg)](library.ipynb)
+[![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/is-isee/training_course/blob/main/docs/python/library.ipynb)
 
 Pythonには非常に様々なライブラリがある。
 `import` 文を使ってライブラリを呼び出すことで、各ライブラリが提供する様々な機能を利用することができる。

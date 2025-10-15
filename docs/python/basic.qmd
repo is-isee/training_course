@@ -2,7 +2,7 @@
 title: "Python 入門 -- 基礎文法"
 ---
 
-[![open in colab](https://colab.research.google.com/assets/colab-badge.svg)](basic.ipynb)
+[![](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/is-isee/training_course/blob/main/docs/python/basic.ipynb)
 
 この資料では、 Python の基礎的な文法を紹介する。
 
