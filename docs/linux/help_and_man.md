@@ -25,8 +25,8 @@ ls --help
 
 ## **演習**: コマンドの使い方を調べてみよう
 
-1. コマンド `ls` は何を目的とするコマンド？
-2. コマンド `ls` でサイズを人間に読める単位 (human readable) で表示するには？
+1. コマンド `ls` は何を目的とするコマンドでしょうか。
+2. コマンド `ls` でファイルサイズを人間に読める単位 (human readable) で表示するには、どのオプションを使えばいいでしょうか。
 
 ## エラーを読むくせをつける
 
@@ -77,4 +77,6 @@ $ cat test.txt
 Permission denied
 $ echo hoge >> test.txt
 Permission denied
+$ chmod 644 test.txt
+$ rm -f test.txt
 ```
