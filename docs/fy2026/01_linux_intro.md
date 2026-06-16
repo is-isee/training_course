@@ -107,7 +107,7 @@ if __name__ == "__main__":
 
 ## 課題
 
-以下の課題への回答を、課題提出用リポジトリ `is-isee/training_course_2026-アカウント名` の `assignments/01_linux_intro.md` に記述して提出してください。
+以下の課題への回答を、課題提出用リポジトリ `is-isee/training_course_2026-アカウント名` の `01_linux_intro/assignment.md` に記述して提出してください。
 
 ### 課題1: ターミナル操作のショートカット
 
