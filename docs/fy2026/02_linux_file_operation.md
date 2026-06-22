@@ -11,7 +11,7 @@
 
 ## 課題
 
-以下の課題への回答を、課題提出用リポジトリ `is-isee/training_course_2026-アカウント名` の `02_linux_file_operation/assignment.md` に記述して提出してください。
+以下の課題への回答を、課題提出用リポジトリの `02_linux_file_operation/assignment.md` に記述して提出してください。
 
 ### 課題1: ファイルとディレクトリの操作
 
