@@ -1,8 +1,8 @@
 # ファイル・ディレクトリの操作
 
-## Linux では「すべてはファイル」
+## Linux におけるファイルの位置づけ
 
-Linuxでは、デバイスやプロセス情報、設定インタフェースなど、あらゆるリソースが「ファイル」として表現されます
+Linuxでは、デバイスやプロセス情報、設定インタフェースなど、非常に多くのリソースが「ファイル」として表現されます
 
 - 通常のファイルやディレクトリ
 - `/dev/null` や `/dev/sda1`（デバイス）
@@ -26,7 +26,7 @@ ls -lh         # サイズを人間に読みやすい単位で表示
 - `?` : 任意の1文字にマッチ
 - `[a-c]` : aからcまでの任意の1文字にマッチ
 - `[3-9]` : 3から9までの任意の1文字にマッチ
-- `[^a-c]` : aからcまでの文字以外の任意の1文字にマッチ
+- `[a,c,z]*` : a、c、zのいずれかで始まる任意の長さの文字列にマッチ
 - **注意**: 正規表現とは異なるパターンマッチのルールで、**グロブ**（glob）とも呼ばれます
 
 ## 今どこにいるの？ `pwd`
@@ -76,16 +76,27 @@ $ ls no_such_file.txt   # 標準エラー出力に No such file or directory
 ```bash
 $ ls
 $ ls -l | grep a
-$ ls non_such_file.txt 2> error.log
+$ ls no_such_file.txt 2> error.log
 ```
 
 ## 空ファイルの作成 `touch`
 
-本来はファイルの最終アクセス日時を更新するためのコマンドですが、空ファイルの作成に良く使われます。
+本来はファイルのタイムスタンプ (最終アクセス日時や最終変更日時) を更新するためのコマンドですが、空ファイルの作成に良く使われます。
 
 ```bash
 $ touch newfile.txt
 ```
+
+タイムスタンプには色々な種類があります。
+ファイルシステムや環境によっては、タイムスタンプが正確に更新されない場合もあります。
+
+- `mtime`: 最終変更日時 (modified time)
+  - `ls -l` で表示される日時
+- `atime`: 最終アクセス日時 (access time)
+  - `ls -lu` で表示される日時
+- `ctime`: 最終状態変更日時 (change time)
+  - `ls -lc` で表示される日時
+  - ファイルの内容が変わったときだけでなく、アクセス権限 (後述) が変わったときも更新される
 
 ## ディレクトリの作成・削除 `mkdir` `rmdir`
 
@@ -97,20 +108,57 @@ $ rmdir newdir                      # 空でないと失敗する
 
 ## ファイル・ディレクトリの削除 `rm`
 
+ファイル・ディレクトリの削除には、`rm` コマンドを使います。
+
 ```bash
 $ rm file.txt
 $ rm -r directory/     # ディレクトリを再帰的に削除
 ```
 
-## ファイル・ディレクトリのコピー・移動 `cp`、`mv`
+### `rm` コマンドの注意点
+
+注意点として、通常のデスクトップ環境での削除とは異なり、削除したファイルは基本的に復元できません。ゴミ箱のような概念はなく、削除したファイルは即座に消えます。
+非常に強力なコマンドです。**削除したファイルは基本的に復元できません**。慎重に使いましょう。
+
+### `rm` コマンドの事故防止策
+
+`rm` コマンドに `-i` オプションを付けることで、削除前に確認することができます。
 
 ```bash
-$ cp source.txt dest.txt
-$ cp -r src_dir/ dest_dir/   # ディレクトリを再帰的にコピー
-
-$ mv oldname.txt newname.txt
-$ mv file.txt ~/             # 移動
+$ rm -i file.txt
+rm: remove regular file 'file.txt'? y   # ここで y と入力すると削除される
 ```
+
+事故防止のため、以下のようなエイリアスを `~/.bashrc` に設定しておくと安全です。
+
+```bash
+# ~/.bashrc
+alias rm='rm -i'  # 削除前に確認する
+```
+
+この設定の上で、もし強制的に削除したい場合は、`rm -f file.txt` や `rm -rf directory/` を使います。
+
+## ファイル・ディレクトリのコピー `cp`
+
+```bash
+$ cp old.txt new.txt        # old.txt を new.txt にコピー
+$ cp old.txt dir/           # old.txt を dir/old.txt にコピー
+$ cp -r old_dir/ new_dir/   # ディレクトリを再帰的にコピー
+```
+
+上の最初の例で、もし `new.txt` が既に存在していた場合、`new.txt` は上書きされます。
+上書き前に確認したい場合は、`cp -i old.txt new.txt` のように `-i` オプションを付けます。
+
+## ファイル・ディレクトリの移動 `mv`
+
+```bash
+$ mv old.txt new.txt        # old.txt を new.txt に名前変更
+$ mv file.txt dir/          # file.txt を dir/file.txt に移動
+$ mv old_dir/ new_dir/      # old_dir/ を new_dir/ に名前変更
+```
+
+`mv` コマンドも `cp` と同様に、既存のファイルは上書きしてしまいます。
+上書き前に確認したい場合は `-i` オプションを付けましょう。
 
 ## ファイルの検索 `find`
 
@@ -122,11 +170,27 @@ $ find . -name "*.txt"
 $ find /path -type f -size +10M
 ```
 
-## ファイル・ディレクトリの容量 `ls -lh`、`du -hs`
+## ファイル・ディレクトリのサイズ確認 `ls -lh`、`du -hs`
 
 ```bash
-$ ls -lh           # サイズ表示
-$ du -hs folder/   # ディレクトリの合計サイズ
+$ ls -lh           # サイズの出力 (`-h` は人間に読みやすい単位での出力オプション)
+total 28K
+-rw-r--r--  1 iijimahr staff 1.6K  4  4  2025 LICENSE
+-rw-r--r--  1 iijimahr staff  731  6 12  2025 README.md
+drwxr-xr-x  5 iijimahr staff  160  4  6  2025 dev/
+drwxr-xr-x 16 iijimahr staff  512  6 11 10:39 docs/
+-rw-r--r--  1 iijimahr staff 3.1K  6 16 09:37 mkdocs.yml
+```
+
+この出力で、`LICENSE` ファイルの `1.6K` という表示から、このファイルのサイズが 1.6KB (キロバイト) という事がわかります。
+`dev/` ディレクトリのサイズは 160 ですが、これはディレクトリ内のファイル数などディレクトリ(というファイル)に含まれるメタデータ情報のサイズであることに注意してください。ディレクトリの中身の合計サイズではありません。
+
+ディレクトリの中身の合計サイズを知りたい場合は、`du` コマンドを使います。
+この例では、`dev/` ディレクトリの中身の合計サイズは 12KB でした。
+
+```shell
+$ du -hs dev/   # ディレクトリの合計サイズの出力
+12K    dev/
 ```
 
 ## アクセスの権限の確認 `ls -l`
@@ -158,7 +222,7 @@ $ ls -l
 ## アクセスの権限の変更 `chmod`
 
 ```bash
-$ chmod 644 file.txt        # 所有者に rw-、その他に r--
+$ chmod 644 file.txt        # file.txtの権限に `-rw-r--r--` を設定
 $ chmod -R u-w scripts/     # 所有者の書き込み権限を再帰的に削除
 $ chmod a+x run.sh          # 全員に実行権限を追加
 ```
@@ -185,15 +249,24 @@ $ ln -s target.txt link.txt
 ## ファイルの圧縮・アーカイブ `zip`、`unzip`、`tar`
 
 ```bash
-$ zip archive.zip file1 file2
-$ unzip archive.zip
+$ zip archive.zip file1 file2       # ファイルをzip形式で圧縮
+$ unzip archive.zip                 # zip形式の圧縮を展開
 
-$ tar -cvf archive.tar folder/  # アーカイブの作成
-$ tar -xvf archive.tar          # アーカイブの展開
+$ tar -cvf archive.tar folder/      # アーカイブ作成、圧縮はしない
+$ tar -xvf archive.tar              # 展開
+
+$ tar -czvf archive.tar.gz folder/  # gzip圧縮つきアーカイブ
+$ tar -xzvf archive.tar.gz          # gzip圧縮つきアーカイブを展開
 ```
 
 ## **演習**: 色々なファイル操作
 
-- 隠しファイルを含むファイル一覧を表示しましょうい
-- 空のファイルを3つ作成し、まとめて削除しましょう
+- 隠しファイルを含むファイル一覧を表示しましょう
+- `~/practice` ディレクトリを作成し、その中に移動しましょう
+- `a.txt`, `b.txt`, `c.dat` を作成し、`*.txt` にマッチするファイルだけ表示しましょう
+- `a.txt` を `a_backup.txt` にコピーしましょう
+- `a_backup.txt` を `a_bk.txt` に名前変更しましょう
+- `find` を使って、ホームディレクトリ以下の `hello.txt` を探しましょう
 - `~/dir1/hello.txt` を作り、`~/dir2/hello.txt` へシンボリックリンクを貼りましょう
+- `alias rm='rm -i'` を`~/.bashrc`に設定して、`rm` の挙動を確認しましょう
+- `rm -i [a,b].txt` を実行して `a.txt` と `b.txt` を一度に削除しましょう
