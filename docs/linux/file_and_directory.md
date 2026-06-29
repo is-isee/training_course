@@ -269,4 +269,4 @@ $ tar -xzvf archive.tar.gz          # gzip圧縮つきアーカイブを展開
 - `find` を使って、ホームディレクトリ以下の `hello.txt` を探しましょう
 - `~/dir1/hello.txt` を作り、`~/dir2/hello.txt` へシンボリックリンクを貼りましょう
 - `alias rm='rm -i'` を`~/.bashrc`に設定して、`rm` の挙動を確認しましょう
-- `rm -i [a,b].txt` を実行して `a.txt` と `b.txt` を一度に削除しましょう
+- `rm -i [ab].txt` を実行して `a.txt` と `b.txt` を一度に削除しましょう
