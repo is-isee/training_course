@@ -53,7 +53,7 @@ export PATH="$HOME/bin:$PATH"
 ## GitHub CLIでGitHubにログインする
 
 GitHub CLIを使ってGitHubにログインするには、`gh auth login` を実行します。
-コマンドが選択肢を確認してきますので、例えば以下のように選択します。
+コマンドが選択肢を確認してきますので、以下は`is-isee`というGitHubアカウントでログインする例です。
 
 ```shell
 $ gh auth login
@@ -68,7 +68,7 @@ Press Enter to open https://github.com/login/device in your browser...
 - gh config set -h github.com git_protocol https
 ✓ Configured git protocol
 ! Authentication credentials saved in plain text
-✓ Logged in as iijimahr
+✓ Logged in as is-isee
 ! You were already logged in to this account
 ```
 
@@ -82,7 +82,7 @@ Press Enter to open https://github.com/login/device in your browser...
 ```shell
 $ gh auth status
 github.com
-  ✓ Logged in to github.com account iijimahr (/home/iijimahr/.config/gh/hosts.yml)
+  ✓ Logged in to github.com account is-isee (/home/is-isee/.config/gh/hosts.yml)
   - Active account: true
   - Git operations protocol: https
   - Token: gho_************************************

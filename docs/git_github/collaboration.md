@@ -2,155 +2,242 @@
 
 ## ブランチとは
 
-Gitの**ブランチ**とは、コード内の作業履歴を分岐して記録する機能です。複数の作業を平行する際に、作業履歴を分岐させることで、互いの作業に影響を与えずに作業を進めることができます。
+Gitの**ブランチ**とは、コード内の作業履歴を分岐して記録する機能です。複数の作業を並行する際に、作業履歴を分岐させることで、互いの作業に影響を与えずに作業を進めることができます。
 特に最初に作られた開発の本流となるブランチ (`main` や `master`) を**メインブランチ**と呼びます。
 
-## ローカルブランチの作成と移動 `git branch`、`git switch`
+**注意**: この記事で紹介する公式ドキュメントの図ではメインブランチを `master` と表記されていますが、現在はメインブランチに `main` が使われることが多いです。本資料では適宜 `master` を `main` と読み替えてください。
 
-```bash
-# --- 現在のブランチを確認 ---
-# 'git branch' コマンドでローカルブランチの一覧を表示
-# '*' が現在チェックアウトしているブランチを示す
-$ git branch
-* main
+## ブランチ操作の概要
 
-# --- 新しいローカルブランチを作成 ---
-# 'feature/add-new-feature' という名前のブランチを作成
-$ git branch feature/add-new-feature
+公式ドキュメント <https://git-scm.com/book/en/v2/Git-Branching-Branches-in-a-Nutshell> から、いくつかブランチの概念図を紹介します。
 
-# 再度ブランチ一覧を表示 (まだ main ブランチにいる)
-$ git branch
-* main
-  feature/add-new-feature
+まず、初期状態では、`master` ブランチで作業していたとしましょう。
 
-# --- 作成したブランチに移動 ---
-# 'git switch' コマンドで 'feature/add-new-feature' ブランチに切り替え
-# (古いGitでは 'git checkout feature/add-new-feature' を使用)
-$ git switch feature/add-new-feature
-Switched to branch 'feature/add-new-feature'
+```shell
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
 
-# 現在のブランチが切り替わったことを確認
-$ git branch
-  main
-* feature/add-new-feature
-
-# --- (補足) ブランチ作成と移動を同時に行う ---
-# 'fix/minor-bug' というブランチを作成し、同時にそのブランチへ移動する
-# (古いGitでは 'git checkout -b fix/minor-bug' を使用)
-$ git switch -c fix/minor-bug
-Switched to a new branch 'fix/minor-bug'
-
-$ git branch
-  main
-  feature/add-new-feature
-* fix/minor-bug
-
-# 作業のため、元の feature ブランチに戻っておく
-$ git switch feature/add-new-feature
-Switched to branch 'feature/add-new-feature'
+nothing to commit, working tree clean
 ```
 
-## リモートブランチの作成と削除 `git push -u/--set-upstream`、`git push -d/--delete`、`git pull -p/--prune`
+実験のため、`testing` ブランチが必要となり、以下のコマンドで新しいブランチを作成しました。
 
-リモートリポジトリにおいてもローカルリポジトリと同様にブランチを作成することが可能で、リモートブランチとローカルブランチを同期させることができます。
-リモートブランチとローカルブランチの名前は異なっていても問題ありませんが、習慣として、リモートブランチと紐づけられたローカルブランチ名前は同一にする方が誤解が少ないでしょう。
+```shell
+$ git branch testing
+```
 
-```bash
-# --- 前提: feature/add-new-feature ブランチにいる状態 ---
-$ git branch
-  main
-* feature/add-new-feature
-  fix/minor-bug
+![2つのブランチ](https://git-scm.com/book/en/v2/images/head-to-master.png)
 
-# --- ローカルブランチをリモートにプッシュしてリモートブランチを作成 ---
-# 現在のローカルブランチ 'feature/add-new-feature' をリモートリポジトリ 'origin' にプッシュ
-# '-u' (または '--set-upstream') オプション:
-#   - リモートに同名のブランチがなければ作成する
-#   - ローカルブランチがリモートの同名ブランチを追跡するように設定する (upstream設定)
+このとき、`master` ブランチと `testing` ブランチが並行して存在しています。
+ここで、`HEAD` という特殊なポインタがあります。`HEAD` は現在作業中のブランチを指しており、上の図では `master` ブランチを指しています。
+`git branch testing` コマンドを実行した直後は、まだ `testing` ブランチではなく `master` ブランチで作業を続けている状態です。
+
+ここで、以下のコマンドを実行して、`HEAD` を `testing` ブランチに切り替えます。
+
+```shell
+$ git switch testing
+```
+
+![HEADがtestingを指している](https://git-scm.com/book/en/v2/images/head-to-testing.png)
+
+上の図は、`HEAD` が `testing` ブランチを指すようになった状態です。
+
+ここで、以下のようにファイルを変更してみましょう。
+
+```shell
+$ vi test.py
+$ git add test.py
+$ git commit -m 'Make a change'
+```
+
+![testingブランチの変更後](https://git-scm.com/book/en/v2/images/advance-testing.png)
+
+`testing` ブランチで変更を加えたため、`HEAD` が指す `testing` ブランチのコミット履歴が更新されました。ただし、`master` ブランチのコミット履歴は変更されていません。
+
+この状態で、以下のコマンドを実行して `HEAD` ポインタを `master` ブランチに変更しましょう。
+
+```shell
+$ git switch master
+```
+
+![HEADがmasterブランチを指した状態](https://git-scm.com/book/en/v2/images/checkout-master.png)
+
+この状態では、`master` ブランチの `test.py` は何も変更されていない状態です。
+以下のコマンドを実行すると、`testing` ブランチの変更が `master` ブランチに統合されます。
+
+```shell
+$ git merge testing
+```
+
+作業後に不要になった `testing` ブランチは、以下のコマンドで削除できます。
+
+```shell
+$ git branch -d testing
+```
+
+これが一連のブランチ操作の流れです。
+
+## コンフリクト
+
+もし別のブランチで作業している間に、メインブランチ側でも変更が進んでいたらどうなるでしょうか。多くの場合、`git merge` により Git は両方の変更を自動で統合できます。しかし、同じファイルの同じ箇所が別々の内容に変更されている場合、Git はどちらを採用すべきか判断できません。この状態をコンフリクトと呼びます。
+
+![複数ブランチの並行作業の例](https://git-scm.com/book/en/v2/images/basic-merging-1.png)
+
+上図では、`master` ブランチと `iss53` ブランチで、それぞれ個別のコミット履歴 (C3, C4, C5) が作られています。この状態で、`master` ブランチに `iss53` ブランチの変更を統合しようとして、例えば以下のようなメッセージが表示されました。
+
+```shell
+$ git switch master
+$ git merge iss53
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+この状態をコンフリクトと呼びます。コンフリクトが発生すると、Gitは自動で変更を統合できず、手動で解決する必要があります。コンフリクトが発生したファイル (上の例では `index.html`) には、以下のようなマーカーが挿入されます。
+
+```html
+<<<<<<< HEAD:index.html
+<div id="footer">contact : email.support@github.com</div>
+=======
+<div id="footer">
+ please contact us at support@github.com
+</div>
+>>>>>>> iss53:index.html
+```
+
+これは、`HEAD` (`master` ブランチ) と `iss53` ブランチの変更箇所を示しています。`<<<<<<<` と `=======` の間が `HEAD` の内容、`=======` と `>>>>>>>` の間が `iss53` の内容です。
+コンフリクトをおこしたファイル (`index.html`) をエディタで開き、以下のように編集しましょう。
+
+```html
+<div id="footer">
+please contact us at email.support@github.com
+</div>
+```
+
+これは、`iss53` の変更を残しつつ、アドレスは `master` のものを採用した例です。コンフリクトを解決したら、以下のコマンドで変更をステージングし、コミットします。
+
+```shell
+$ git add index.html
+$ git commit -m 'Resolve merge conflict in index.html'
+```
+
+## 共同開発におけるブランチ
+
+共同開発では、`main` ブランチを直接編集するのではなく、作業ごとに新しいブランチを作成して変更を加えることが一般的です。
+
+例えば、新しい機能を追加する場合は、以下のように作業用ブランチを作成して、そのブランチに移動します。
+
+```shell
+$ git switch -c feature/add-new-feature
+Switched to a new branch 'feature/add-new-feature'
+```
+
+この状態でファイルを編集し、通常どおり `add` と `commit` を行います。
+
+```shell
+$ git add .
+$ git commit -m 'Add new feature'
+```
+
+ここまでの変更は、まだ自分のPC上のローカルリポジトリにしか存在しません。他の人と共有したり、GitHub上でプルリクエストを作成したりするには、作業ブランチをリモートリポジトリに `push` する必要があります。
+
+```shell
 $ git push -u origin feature/add-new-feature
-Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
-To ../remote_repo/project.git
- * [new branch]      feature/add-new-feature -> feature/add-new-feature
-Branch 'feature/add-new-feature' set up to track remote branch 'feature/add-new-feature' from 'origin'.
-
-# --- リモート追跡ブランチの確認 ---
-# 'git branch -r' でリモート追跡ブランチの一覧を表示
-$ git branch -r
-  origin/HEAD -> origin/main
-  origin/main
-  origin/feature/add-new-feature # 新しく作成されたリモートブランチの情報
-
-# 'git branch -a' でローカルとリモート追跡ブランチを全て表示
-$ git branch -a
-* feature/add-new-feature
-  fix/minor-bug
-  main
-  remotes/origin/HEAD -> origin/main
-  remotes/origin/main
-  remotes/origin/feature/add-new-feature
-
-# --- main ブランチに戻る ---
-$ git switch main
-Switched to branch 'main'
-Your branch is up to date with 'origin/main'.
-
-# --- リモートブランチの削除 ---
-# リモートリポジトリ 'origin' 上の 'feature/add-new-feature' ブランチを削除
-# '-d' (または '--delete') オプションを使用
-$ git push -d origin feature/add-new-feature
-To ../remote_repo/project.git
- - [deleted]         feature/add-new-feature
-
-# --- リモート追跡ブランチの情報を整理 ---
-# リモートで削除されたブランチの追跡情報がローカルに残っている場合がある
-$ git branch -r
-  origin/HEAD -> origin/main
-  origin/main
-  origin/feature/add-new-feature # まだ情報が残っている
-
-# 'git pull --prune' (または 'git pull -p') を実行すると、
-# リモートリポジトリに存在しないブランチの追跡情報がローカルから削除される
-$ git pull -p
-From ../remote_repo/project
- x [deleted]         (none)     -> origin/feature/add-new-feature # 削除されたことを検知
-Already up to date.
-
-# 再度リモート追跡ブランチを確認 (削除されている)
-$ git branch -r
-  origin/HEAD -> origin/main
-  origin/main
-
-# ローカルブランチは削除されていないので、不要であれば別途削除する
-$ git branch
-* main
-  feature/add-new-feature # ローカルにはまだ残っている
-  fix/minor-bug
-$ git branch -d feature/add-new-feature # ローカルブランチを削除
-Deleted branch feature/add-new-feature (was XXXXXXX). # コミットハッシュは適宜変わる
 ```
 
-## 共同開発におけるブランチの命名規則
+ここで `origin` はリモートリポジトリの名前です。多くの場合、GitHub上のリポジトリを指します。
 
-共同開発を行う場合、そのプロジェクトの方針に従うことが原則で、ブランチの命名規則も同様です。
-例として、`user/issue37` や `user/add-xxx-feature` のようにユーザー名を先頭につけるものは、誰が作業中か明らかで、またブランチ名の衝突も防ぎやすいため、よく利用される命名規則の一つです。
+また、`-u` は `--set-upstream` の短縮形で、ローカルブランチとリモートブランチを対応づけるためのオプションです。これを一度設定しておくと、次回以降はブランチ名を省略して次のように実行できます。
 
-## イシューとプルリクエスト
+```shell
+$ git push
+```
 
-**イシュー (issue)**と**プルリクエスト (pull request; PR)**はどちらもGitHubなどの開発ツールで利用できる機能です。
-イシューは課題やタスクを管理する機能、プルリクエストは変更を提案・議論する機能です。
+また、リモートリポジトリ側の変更を取得する場合も、次のように実行できます。
 
-## 演習: イシューとプルリクエストを送る
+```shell
+$ git pull
+```
 
-1. リポジトリに関する何らかの改善案を作成
-2. GitHubのWeb UIでイシューを作成
-   共同開発の場合、この時にメンテナ(プロジェクトの管理者)との議論が発生する場合もある
-3. イシューを自分自身にアサイン
-4. 新しいブランチを作成し、イシューを解決するように`commit`  
-   この際、コミットメッセージに `fix #37` や `close #37` のようにイシュー番号とキーワードを含めると、手順7でプルリクエストがマージされた際に自動でイシューを閉じることができる([出典](https://docs.github.com/ja/get-started/writing-on-github/working-with-advanced-formatting/using-keywords-in-issues-and-pull-requests))。
-5. リモートブランチに`push`
-6. GitHubのWeb UIでプルリクエストを作成  
-   手順4でイシュー番号をメッセージに含めるのを忘れた場合、この時にイシューとプルリクエストを紐づけることができる([出典](https://docs.github.com/ja/issues/tracking-your-work-with-issues/using-issues/linking-a-pull-request-to-an-issue))。
-7. GitHubのWeb UIでプルリクエストをメインブランチにマージ  
-   共同開発の場合、この時にメンテナによるコードレビューが入る。
+このように、ローカルブランチとリモートブランチを対応づけておくと、共同開発での作業が簡単になります。
 
-この開発の流れは GitHub Flow と呼ばれる一般的な Git ワークフローの1つに則ったものです。
+## リモートブランチとは
+
+**リモートブランチ**とは、GitHubなどのリモートリポジトリ上に存在するブランチのことです。
+
+例えば、自分のPC上にある `feature/add-new-feature` はローカルブランチですが、GitHub上にある `feature/add-new-feature` はリモートブランチです。
+
+Gitでは、リモートブランチの状態をローカル側で `origin/feature/add-new-feature` のような名前で参照します。
+
+```shell
+$ git branch -r
+  origin/master
+  origin/feature/add-new-feature
+```
+
+ただし、`origin/feature/add-new-feature` は「リモートブランチそのもの」ではなく、「最後に取得したリモートブランチの状態」を表す情報です。そのため、リモート側でブランチが削除されても、ローカルに古い情報が残ることがあります。
+
+このようなローカルに残ってしまった古いリモートブランチ情報を整理したい場合は、次のように実行します。
+
+```shell
+$ git fetch -p
+```
+
+`-p` は `--prune` の短縮形で、リモートリポジトリにはもう存在しないブランチ情報をローカルから削除します。
+
+なお、これはローカルブランチを削除する操作ではありません。不要になったローカルブランチを削除する場合は、別途次のように実行します。
+
+```shell
+$ git branch -d feature/add-new-feature
+```
+
+## ブランチ名の例
+
+共同開発では、ブランチ名を見るだけで何の作業をしているか分かるようにしておくと便利です。
+
+例えば、以下のような名前がよく使われます。
+
+```text
+feature/add-new-feature
+fix/minor-bug
+docs/update-readme
+```
+
+複数人で同じリポジトリを使う場合は、ユーザー名を先頭につけることもあります。
+
+```text
+is-isee/add-new-feature
+is-isee/fix-minor-bug
+```
+
+どの命名規則を使うかはプロジェクトによって異なります。共同開発では、そのプロジェクトの方針に従うようにしましょう。
+
+## GitHubの機能: イシューとプルリクエスト
+
+GitHubでは、作業内容を管理するために**イシュー**と**プルリクエスト**がよく使われます。
+
+**イシュー**は、バグ修正・機能追加・ドキュメント改善などの課題を記録するための機能です。
+例えば、このリポジトリのイシューは <https://github.com/is-isee/training_course/issues> で確認出来ます。
+
+**プルリクエスト**は、自分のブランチで行った変更を、`main` ブランチなどに取り込んでもらうための提案です。共同開発では、プルリクエスト上でコードレビューや議論を行ってから、変更をマージすることが一般的です。
+例えば、 <https://github.com/is-isee/MISO/pulls> で `Closed` となっているプルリクエストを見ると、どのような変更が行われたか、どのような議論があったかを確認できます。
+
+## 演習: イシューとプルリクエスト
+
+以下の流れで、GitHub上での開発フローを体験してみましょう。
+
+1. GitHub上でイシューを作成する
+2. イシューに対応する作業用ブランチを作成する
+3. ファイルを編集し、変更をコミットする
+4. 作業ブランチを同名のリモートリポジトリにpushし、プルリクエストを作成する
+   - 方法1: `gh pr create` コマンドにより、pushとプルリクエスト作成を同時に実行
+   - 方法2: `git push -u origin branch_name` し、ブラウザでプルリクエストを作成
+5. プルリクエストを `main` ブランチにマージする (ブラウザ上で可能です)
+6. 不要になったブランチを削除する
+
+実際の共同開発では、手順4と5の間にコードレビューや議論が行われることが多いです。プルリクエストを作成したら、他の開発者にレビューを依頼し、必要に応じて修正を加えます。
+
+コミットメッセージやプルリクエストの本文に `fix #37` や `close #37` のように書くと、プルリクエストがマージされたときに対応するイシューを自動で閉じることができます。
+
+このように、イシューで作業内容を管理し、ブランチで変更を分け、プルリクエストで変更を確認してからマージする流れは、GitHubを使った共同開発でよく使われる方法です。
