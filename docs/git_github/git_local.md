@@ -5,6 +5,46 @@
 リポジトリとは、データや情報を保存・管理する場所やシステムを指す言葉です。
 Gitリポジトリとは、プロジェクトのソースコードやファイル、変更履歴を保存しておく場所で、プロジェクトの一番上のディレクトリの `project/.git` という隠しディレクトリがその本体です。
 
+## バージョン管理システム
+
+![ローカルなバージョン管理システム](https://git-scm.com/book/en/v2/images/local.png)
+
+この図は、バージョン管理システムの基本的な概念を示しています。バージョンデータベースには、複数のコードの履歴 ("Version 1"、 "Version 2"、"Version 3") が保存されており、開発者はこのデータベースから必要なバージョンを取得して作業を行います。作業が完了したら、変更内容をデータベースに戻すことで、履歴が更新されます。Gitはこのようなバージョン管理システムの一種です。
+
+## Git のインストール
+
+多くのLinux環境では、Gitはすでにインストールされています。インストールされているかどうかは、ターミナルで以下のコマンドを実行することで確認できます。
+
+```bash
+$ git --version
+git version 2.30.1
+```
+
+## 初期設定
+
+Gitを始めて使う前に、以下の設定をしておきましょう。
+これにより、Gitに記録した変更履歴が誰の作業によるものかを識別できるようになります。
+
+```bash
+# Gitで記録するユーザー名
+$ git config --global user.name "Taro Yamada"
+
+# Gitで記録するEmailアドレス (GitHubアカウントに登録しているもの)
+$ git config --global user.email "taro@example.com"
+
+# Gitの初期ブランチ名を main に設定
+$ git config --global init.defaultBranch main
+```
+
+現在の設定は、以下のように確認出来ます。
+
+```bash
+$ git config --global --list
+user.name=Taro Yamada
+user.email=taro@example.com
+init.defaultbranch=main
+```
+
 ## 基礎的なGitコマンドの一覧
 
 - リポジトリの作成: `git init`
