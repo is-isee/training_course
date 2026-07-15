@@ -7,7 +7,7 @@ nav:
     - Linux入門: fy2026/01_linux_intro.md
     - Linuxファイル操作: fy2026/02_linux_file_operation.md
     - Git/GitHub入門: fy2026/03_git_github.md
-    # - シェルスクリプト入門: fy2026/04_shell_script.md
+    - シェルスクリプト入門: fy2026/04_shell_script.md
     # - 計算機ネットワーク入門: fy2026/05_network.md
   - Linux入門:
     - 事前準備: linux/prep.md
